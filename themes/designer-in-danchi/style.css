@@ -1,0 +1,1046 @@
+@charset "UTF-8";
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+*/
+/*
+*general*
+*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #d2f8fa;
+  animation: fadeIn 2s ease forwards; /* fadeInアニメーションを0.3秒かけて実行 */
+  opacity: 0; /* 初期状態は透明 */
+}
+
+section {
+  display: block;
+  margin: 100px auto !important;
+}
+
+main > div > h1 {
+  font-size: 80px;
+  font-weight: normal;
+  color: #fff;
+}
+@media screen and (min-width: 992px) {
+ main > div > h1 {
+  font-size: 100px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+/*ページ内リンク位置調整*/
+#profile {
+  padding-top: 120px;
+  margin-top: -120px; /* ヘッダーの高さ分上にmarginで戻す */
+}
+
+li {
+  list-style-type: none;
+}
+
+.pagetitle {
+  padding-top: 95px;
+}
+@media screen and (min-width: 992px) {
+  .pagetitle {
+    padding-top: 140px;
+  }
+}
+
+/* 
+*pages*
+ */
+/*top*/
+#top {
+  background: url(img/top.jpg) no-repeat 36% 0;
+  background-size: cover;
+}
+@media screen and (min-width: 992px) {
+  #top {
+    background: url(img/top.jpg) no-repeat bottom center;
+  }
+}
+#top h1 {
+  animation: fadeIn 3s linear forwards;
+}
+#top h1 a:hover {
+  color: #1793b6;
+  transition: 1s ease all;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*about*/
+img.about1 {
+  filter: brightness(0.95);
+}
+
+.post-password-form {
+  /* フォーム全体のスタイル */
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-password-form p {
+  max-width: 480px;
+  margin: 0 auto 20px auto;
+}
+
+.post-password-form label {
+  /* ラベルのスタイル */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.post-password-form input[type=password] {
+  /* パスワード入力欄のスタイル */
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.post-password-form input[type=submit] {
+  padding: 5px 10px;
+  background-color: #1793b6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/*thanks*/
+.thanks main {
+  background: #eaffb1;
+}
+
+/*notfound*/
+.notfound h1 {
+  font-size: 40px;
+}
+.notfound h1 span {
+  display: block;
+  font-size: 140px;
+}
+@media screen and (min-width: 768px) {
+  .notfound h1 span {
+    font-size: 180px;
+  }
+}
+
+/*nav*/
+header {
+  z-index: 10;
+}
+
+.toplogo span span {
+  display: block;
+  font-style: italic;
+  font-size: 0.5em;
+  color: #666;
+}
+
+nav a:hover {
+  color: #1793b6;
+}
+
+.button_container {
+  position: fixed;
+  top: 2.5%;
+  right: 4%;
+  height: 27px;
+  width: 32px;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+}
+.button_container:hover {
+  color: #d2f8fa;
+}
+.button_container.active .top {
+  background: #fff;
+  transform: translateY(11px) translateX(0) rotate(45deg);
+}
+.button_container.active .middle {
+  opacity: 0;
+  background: #fff;
+}
+.button_container.active .bottom {
+  background: #fff;
+  transform: translateY(-11px) translateX(0) rotate(-45deg);
+}
+.button_container span {
+  background: #333333;
+  border: none;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.button_container span:nth-of-type(2) {
+  top: 11px;
+}
+.button_container span:nth-of-type(3) {
+  top: 22px;
+}
+
+.overlay {
+  position: fixed;
+  background: #ffdcf1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+}
+.overlay.open {
+  opacity: 0.95;
+  visibility: visible;
+  height: 100%;
+}
+.overlay.open li {
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
+}
+.overlay.open li:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.overlay.open li:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+.overlay.open li:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+.overlay nav {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+}
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+.overlay ul li {
+  display: block;
+  height: 25%;
+  height: 25%;
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+.overlay ul li a {
+  display: block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+}
+.overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+  width: 100%;
+}
+.overlay ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  transform: translateX(-50%);
+  height: 3px;
+  background: #fff;
+  transition: 0.35s;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+.bg-pink {
+  background: #ffdcf1;
+}
+
+.bg-blue {
+  background: #9febff;
+}
+
+.bg-green {
+  background: #eaffb1;
+}
+
+/*
+*slick*
+*/
+.responsive {
+  z-index: 0;
+}
+.responsive .prev-arrow {
+  display: block;
+  position: absolute;
+  width: 30px;
+  left: 0;
+  top: 45%;
+  z-index: 5;
+}
+.responsive .prev-arrow img {
+  width: 30px;
+  rotate: 180deg;
+}
+.responsive .next-arrow {
+  display: block;
+  position: absolute;
+  width: 30px;
+  right: 0;
+  top: 45%;
+  z-index: 5;
+}
+.responsive .next-arrow img {
+  width: 30px;
+}
+.responsive .slick-dots {
+  bottom: -2em;
+}
+.responsive .slick-dots li {
+  width: 15px;
+}
+
+/*
+*btn*
+*/
+/*外部リンク*/
+.btn {
+  position: relative;
+  min-height:40px;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  z-index: 2;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+.btn:hover {
+  border: 1px solid #333333;
+}
+.btn::before {
+  position: absolute;
+  right: 1em;
+  top: 35%;
+  content: "";
+  width: 16px;
+  height: 16px;
+  transition: right 0.3s;
+}
+.btn::before {
+  bottom: 0;
+  content: "";
+  height: 16px;
+  width: 16px;
+  margin: auto;
+  position: absolute;
+  right: 2em;
+  top: 0;
+  transition: right 0.3s;
+}
+.btn:hover::before {
+  right: 25px;
+}
+
+.btn-ob::before {
+  background-image: url(icons/box-arrow-up-right.svg);
+}
+
+.btn-modal::before {
+  background-image: url(icons/window-plus.svg);
+}
+
+/*scroll to top*/
+#page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  line-height: 1;
+  z-index: 99;
+}
+
+#page-top a {
+  text-decoration: none;
+  display: block;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+#page-top a:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+/*
+*charts*
+*/
+.modal-header {
+  border: none;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-body::-webkit-scrollbar-track {
+  padding: 1em;
+}
+.modal-body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #aeaeae;
+}
+
+.ruler {
+  position: relative;
+  border-bottom: 1px dotted #333333;
+}
+.ruler:before, .ruler:after {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 14px;
+  top: -6px;
+  border: 0 solid #333333;
+}
+.ruler:before {
+  left: 0;
+  border-left-width: 1px;
+}
+.ruler:after {
+  right: 0;
+  border-right-width: 1px;
+}
+.ruler span[class^=arrow-] {
+  position: absolute;
+  top: -4px;
+  content: "";
+  display: block;
+  border: 5px solid transparent;
+}
+.ruler span[class^=arrow-].arrow-left {
+  left: -5px;
+  border-right-color: #333333;
+}
+.ruler span[class^=arrow-].arrow-right {
+  right: -5px;
+  border-left-color: #333333;
+}
+
+.bar {
+  display: flex;
+  width: 0%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  transition: width 1s;
+  border-radius: 0 5px 5px 0px;
+  font-size: 14px;
+}
+.bar .w-100 {
+  animation: span 2s ease-in-out;
+}
+.bar .flex-shrink-1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  padding-left: 5px;
+  color: #fff;
+  animation: span 3s ease-in-out;
+}
+
+@keyframes span {
+  0% {
+    opacity: 0;
+    color: transparent;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*1*/
+.one_1 {
+  width: 90%;
+  animation: a4 0.5s ease-in-out;
+}
+
+.one_2 {
+  width: 80%;
+  animation: a4 0.7s ease-in-out;
+}
+
+.one_3 {
+  width: 80%;
+  animation: a4 1s ease-in-out;
+}
+
+.one_4 {
+  width: 80%;
+  animation: a4 1.25s ease-in-out;
+}
+
+.one_5 {
+  width: 80%;
+  animation: a4 1.35s ease-in-out;
+}
+
+.one_6 {
+  width: 60%;
+  animation: a3 1.75s ease-in-out;
+}
+
+.one_7 {
+  width: 100%;
+  animation: a5 2s ease-in-out;
+}
+
+/*2*/
+.two_1 {
+  width: 90%;
+  animation: a45 2.05s ease-in-out;
+}
+
+.two_2 {
+  width: 90%;
+  animation: a45 2.1s ease-in-out;
+}
+
+.two_3 {
+  width: 60%;
+  animation: a3 2.15s ease-in-out;
+}
+
+.two_4 {
+  width: 40%;
+  animation: a2 2.205s ease-in-out;
+}
+
+.two_5 {
+  width: 60%;
+  animation: a3 2.25s ease-in-out;
+}
+
+.two_6 {
+  width: 40%;
+  animation: a2 2.3s ease-in-out;
+}
+
+.two_7 {
+  width: 60%;
+  animation: a3 2.35s ease-in-out;
+}
+
+/*3*/
+.three_1 {
+  width: 90%;
+  animation: a45 2.4s ease-in-out;
+}
+
+.three_2 {
+  width: 60%;
+  animation: a3 2.45s ease-in-out;
+}
+
+.three_3 {
+  width: 40%;
+  animation: a2 2.5s ease-in-out;
+}
+
+.three_4 {
+  width: 40%;
+  animation: a2 2.55s ease-in-out;
+}
+
+.three_5 {
+  width: 60%;
+  animation: a3 2.6s ease-in-out;
+}
+
+.three_6 {
+  width: 60%;
+  animation: a3 2.65s ease-in-out;
+}
+
+.three_7 {
+  width: 80%;
+  animation: a4 2.7s ease-in-out;
+}
+
+.three_8 {
+  width: 40%;
+  animation: a2 2.75s ease-in-out;
+}
+
+.three_9 {
+  width: 40%;
+  animation: a2 2.75s ease-in-out;
+}
+
+.three_10 {
+  width: 80%;
+  animation: a4 2.8s ease-in-out;
+}
+
+/*four*/
+.four_1 {
+  width: 90%;
+  animation: a45 2.85s ease-in-out;
+}
+
+.four_2 {
+  width: 90%;
+  animation: a45 2.9s ease-in-out;
+}
+
+.four_3 {
+  width: 80%;
+  animation: a4 2.95s ease-in-out;
+}
+
+.four_4 {
+  width: 40%;
+  animation: a2 3s ease-in-out;
+}
+
+.four_5 {
+  width: 80%;
+  animation: a4 3.1s ease-in-out;
+}
+
+.four_6 {
+  width: 90%;
+  animation: a45 3.15s ease-in-out;
+}
+
+@keyframes a5 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes a45 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+@keyframes a4 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+@keyframes a35 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 70%;
+  }
+}
+@keyframes a3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60%;
+  }
+}
+@keyframes a25 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+@keyframes a2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40%;
+  }
+}
+@keyframes a15 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 30%;
+  }
+}
+@keyframes a1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20%;
+  }
+}
+.bar-1,
+.bar-2,
+.bar-3,
+.bar-4 {
+  background: #1793b6;
+  color: #fff;
+}
+
+.bar-1 {
+  opacity: 0.5;
+}
+
+.bar-2 {
+  opacity: 0.6;
+}
+
+.bar-3 {
+  opacity: 0.8;
+}
+
+/*
+*form*
+*/
+form label span {
+  color: #ff0000;
+}
+form input::-moz-placeholder, form textarea::-moz-placeholder {
+  color: #ccc;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color: #ccc;
+}
+form textarea {
+  resize: vertical !important;
+  min-height: 180px;
+}
+form button {
+  background: #eaffb1;
+}
+form button:hover {
+  background: #9febff;
+  transition: 0.5s ease all;
+}
+
+/* 
+* utility *
+*/
+.md-hide {
+  display: block !important;
+}
+
+.md-show {
+  display: none !important;
+}
+
+@media screen and (min-width: 768px) {
+  .md-hide {
+    display: none !important;
+  }
+  .md-show {
+    display: block !important;
+  }
+}
+.lg-hide {
+  display: block !important;
+}
+
+.lg-show {
+  display: none !important;
+}
+
+@media screen and (min-width: 992px) {
+  .lg-hide {
+    display: none !important;
+  }
+  .lg-show {
+    display: block !important;
+  }
+}
+/*other*/
+.icons {
+  width: 15px;
+  opacity: 0.6;
+}
+
+.modal-content,
+.modal-dialog,
+.card {
+  border: none;
+}
+
+/*text*/
+.x-small {
+  font-size: 0.8em;
+}
+
+.smaller {
+  font-size: 0.9em;
+}
+
+.gray2 {
+  color: #aeaeae;
+}
+
+@media screen and (min-width: 992px) {
+  .mb80 {
+    margin-bottom: 80px;
+  }
+}
+
+.lh {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.09em;
+}
+
+.ti {
+  text-indent: -1em;
+  padding: 0 0 0 1em;
+}
+
+.g-scale img {
+  filter: grayscale(1);
+}
+.g-scale img:hover {
+  filter: grayscale(0);
+}
+
+/*cssのリセット*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ins {
+  text-decoration: none;
+  color: #000;
+  background-color: #ff9;
+}
+
+mark {
+  font-weight: bold;
+  font-style: italic;
+  color: #000;
+  background-color: #ff9;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+/*サイト全体の基準となるCSSを記述*/
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif; /*フォントの指定*/
+  line-height: 1.4; /*行間の指定*/
+  margin: 0;
+  padding: 0;
+  color: #333; /*サイトのデフォルトとなる文字の色を指定*/
+}
+
+/*見出しを全て太字で表示 + 文字色を黒に*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

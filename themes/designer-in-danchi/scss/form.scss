@@ -1,0 +1,29 @@
+/*
+*form*
+*/
+
+form {
+  label {
+    span {
+      color: $red;
+    }
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #ccc;
+  }
+ textarea {
+   resize: vertical !important;
+   min-height: 180px;
+  }
+
+  button {
+    background: $green1;
+
+    &:hover {
+      background: $blue2;
+      transition: 0.5s ease all;
+    }
+  }
+}
