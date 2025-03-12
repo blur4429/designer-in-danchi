@@ -1,0 +1,91 @@
+/* 
+* utility *
+*/
+
+.md-hide {
+  display: block !important;
+}
+
+.md-show {
+  display: none !important;
+}
+
+@include mq(md) {
+  .md-hide {
+    display: none !important;
+  }
+  .md-show {
+    display: block !important;
+  }
+}
+
+.lg-hide {
+  display: block !important;
+}
+
+.lg-show {
+  display: none !important;
+}
+
+@include mq(lg) {
+  .lg-hide {
+    display: none !important;
+  }
+  .lg-show {
+    display: block !important;
+  }
+}
+
+/*other*/
+
+.icons {
+  width: 15px;
+  opacity: 0.6;
+}
+
+.modal-content,
+.modal-dialog,
+.card {
+  border: none;
+}
+
+/*text*/
+
+.x-small {
+  font-size: 0.8em;
+}
+
+.smaller {
+  font-size: 0.9em;
+}
+
+.gray2 {
+  color: $gray2;
+}
+
+.mb80 {
+  @include mq(lg) {
+    margin-bottom: 80px;
+  }
+}
+
+.lh {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.09em;
+}
+
+.ti {
+  text-indent: -1em;
+  padding: 0 0 0 1em;
+}
+
+.g-scale {
+  img {
+    filter: grayscale(1);
+
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}

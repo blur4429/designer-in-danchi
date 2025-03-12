@@ -1,0 +1,29 @@
+$shiro: #fff;
+
+$blue1: #d2f8fa;
+$blue2: #9febff;
+$blue3: #1793b6;
+
+$green1: #eaffb1;
+
+$gray1: #666;
+$gray2: #aeaeae;
+$gray3: #ccc;
+
+$black1: #333333;
+$pink1: #ffdcf1;
+$red: #ff0000;
+
+$breakpoints: (
+  "sm": "screen and (max-width: 767px)",
+  "md": "screen and (min-width: 768px)",
+  "lg": "screen and (min-width: 992px)",
+  "xl": "screen and (min-width: 1200px)",
+  "xxl": "screen and (min-width: 1400px)",
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

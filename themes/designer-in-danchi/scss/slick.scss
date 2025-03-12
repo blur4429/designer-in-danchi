@@ -1,0 +1,42 @@
+/*
+*slick*
+*/
+
+.responsive {
+  z-index: 0;
+
+  .prev-arrow {
+    display: block;
+    position: absolute;
+    width: 30px;
+    left: 0;
+    top: 45%;
+    z-index: 5;
+
+    img {
+      width: 30px;
+      rotate: 180deg;
+    }
+  }
+
+  .next-arrow {
+    display: block;
+    position: absolute;
+    width: 30px;
+    right: 0;
+    top: 45%;
+    z-index: 5;
+
+    img {
+      width: 30px;
+    }
+  }
+
+  .slick-dots {
+    bottom: -2em;
+
+    li {
+      width: 15px;
+    }
+  }
+}

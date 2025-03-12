@@ -1,0 +1,185 @@
+/*nav*/
+
+header {
+  z-index: 10;
+}
+
+.toplogo {
+  span {
+    span {
+      display: block;
+      font-style: italic;
+      font-size: 0.5em;
+      color: $gray1;
+    }
+  }
+}
+
+nav a:hover {
+  color: $blue3;
+}
+
+.button_container {
+  position: fixed;
+  top: 2.5%;
+  right: 4%;
+  height: 27px;
+  width: 32px;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+
+  &:hover {
+    color: $blue1;
+  }
+
+  &.active {
+    .top {
+      background: $shiro;
+      transform: translateY(11px) translateX(0) rotate(45deg);
+    }
+
+    .middle {
+      opacity: 0;
+      background: $shiro;
+    }
+
+    .bottom {
+      background: $shiro;
+      transform: translateY(-11px) translateX(0) rotate(-45deg);
+    }
+  }
+
+  span {
+    background: $black1;
+    border: none;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.35s ease;
+    cursor: pointer;
+
+    &:nth-of-type(2) {
+      top: 11px;
+    }
+
+    &:nth-of-type(3) {
+      top: 22px;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  background: $pink1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+
+  &.open {
+    opacity: 0.95;
+    visibility: visible;
+    height: 100%;
+
+    li {
+      animation: fadeInRight 0.5s ease forwards;
+      animation-delay: 0.35s;
+
+      &:nth-of-type(2) {
+        animation-delay: 0.4s;
+      }
+
+      &:nth-of-type(3) {
+        animation-delay: 0.45s;
+      }
+
+      &:nth-of-type(4) {
+        animation-delay: 0.5s;
+      }
+    }
+  }
+  nav {
+    position: relative;
+    height: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    height: 100%;
+
+    li {
+      display: block;
+      height: 25%;
+      height: calc(100% / 4);
+      min-height: 50px;
+      position: relative;
+      opacity: 0;
+
+      a {
+        display: block;
+        position: relative;
+        color: $shiro;
+        text-decoration: none;
+        overflow: hidden;
+
+        &:hover:after,
+        &:focus:after,
+        &:active:after {
+          width: 100%;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0%;
+          transform: translateX(-50%);
+          height: 3px;
+          background: $shiro;
+          transition: 0.35s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.bg-pink {
+  background: $pink1;
+}
+
+.bg-blue {
+  background: $blue2;
+}
+
+.bg-green {
+  background: $green1;
+}
