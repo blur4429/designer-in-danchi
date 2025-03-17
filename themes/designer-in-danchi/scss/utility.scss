@@ -63,14 +63,16 @@
   color: $gray2;
 }
 
-.mb80 {
-  @include mq(lg) {
-    margin-bottom: 80px;
-  }
+/*line-height*/
+
+.lh-s {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.09em;
 }
 
 .lh {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
   letter-spacing: 0.09em;
 }
@@ -80,6 +82,8 @@
   padding: 0 0 0 1em;
 }
 
+/*img*/
+
 .g-scale {
   img {
     filter: grayscale(1);
@@ -88,4 +92,10 @@
       filter: grayscale(0);
     }
   }
+}
+
+/*color*/
+
+.blue3 {
+  color: $blue3;
 }

@@ -9,11 +9,15 @@
             <li class="col-auto"><a class="" href="#others">⚫︎&nbsp;Others</a></li>
         </ul>
     </div>
-
+     <!--breadcrumb-->
+     <div class="container breadcrumb fw-light p-2 mt-5">
+        <?php if (function_exists('custom_breadcrumb')) {
+          custom_breadcrumb();
+        } ?>
+    </div>
     <!--web sites-->
 
     <section id="web" class="container">
-
         <!--row1-->
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col col-lg-2 ">
@@ -199,7 +203,7 @@
                 <h2 id="lp" class="mb-3">⚫︎&nbsp;Others</h2>
             </div>
             <div class="col col-lg-10">
-               <div class="row" data-masonry="{&quot;percentPosition&quot;: true }">
+                <div class="row" data-masonry="{&quot;percentPosition&quot;: true }">
 
                     <!--★works_other1 242408-->
                     <div class="col-sm-6 col-lg-4 mb-4">

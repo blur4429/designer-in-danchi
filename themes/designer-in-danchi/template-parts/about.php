@@ -1,5 +1,6 @@
 <?php $url = get_template_directory_uri(); ?>
 <main>
+
     <div class="pagetitle container-fluid d-md-flex flex-md-wrap align-items-end px-3 px-lg-5 pb-3 bg-pink">
         <h1 class="me-4 mb-2 mb-md-0">About</h1>
         <ul class="row align-items-end smaller pb-2">
@@ -7,9 +8,14 @@
             <li class="col-auto"><a class="me-1" href="#skills">⚫︎&nbsp;Skills</a></li>
         </ul>
     </div>
+    <!--breadcrumb-->
+    <div class="container breadcrumb fw-light p-2 mt-5">
+        <?php if (function_exists('custom_breadcrumb')) {
+          custom_breadcrumb();
+        } ?>
+    </div>
 
     <!--profile-->
-
     <section class="container">
         <div class="row mb-5">
             <p class="fs-1 fw-light mb80">東京のとある自然豊かな団地に住む、<br class="lg-show">
@@ -26,7 +32,7 @@
             <div class="col col-lg-10">
                 <!--row2-->
                 <div class="row gy-5">
-                    <div class="col-sm col-lg-7 p-3 pe-lg-5">
+                    <div class="col-sm col-lg-7 fs-6 p-3 pe-lg-5">
                         <h3 class="mb-4">「団地に住んでるデザイナー」です。</h3>
                         <p class="fs-6 lh mb-3">神奈川県出身。長らく事務系派遣に従事するもリーマンショックを機に一念発起し、職業訓練校を卒業したのみでWebデザイナーに転身、
                             2024年にお世話になった企業からフリーのWebデザイナーとして巣立ちました。</p>
@@ -104,7 +110,7 @@
                         <!--right２-->
                         <div class="col-sm col-lg-5 g-scale p-3">
                             <p class="bg-white p-3 mb-5"><img src="<?php echo $url; ?>/img/about_skills.jpg" alt="skills"></p>
-                            <?php include(locate_template('/template-parts/raderchart.php')); ?>
+                            <?php include locate_template('/template-parts/raderchart.php'); ?>
                         </div>
 
                         <!-- Modal skill detail-->
@@ -283,7 +289,7 @@
                                             <div class="p-2 w-100">VBA</div>
                                             <div class="p-2 flex-shrink-1">4</div>
                                         </div>
-<!--
+                                        <!--
                                         <div class="d-flex bar bar-4 four_4 mb-2">
                                             <div class="p-2 w-100">Power Automate</div>
                                             <div class="p-2 flex-shrink-1">2</div>

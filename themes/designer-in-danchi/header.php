@@ -13,9 +13,9 @@
     rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
-  <link rel="icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/favicon.ico" type="image/x-icon">
   <?php wp_head(); ?>
-	
+
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -50,42 +50,48 @@ $page_title = get_the_title();
 
 switch ($page_id) {
   case '1':
-    $page_title = "top";
+    $page_title = 'top';
     break;
-  default: // IDが1以外のページの処理
-    switch ($page_title) {
-      case 'About':
-        $page_class_about = "border-bottom border-secondary";
-        $bg = "bg-pink";
-        break;
-      case 'Works':
-        $page_class_works = "border-bottom border-secondary";
-        $bg = "bg-blue";
-        break;
-      case 'Contact':
-        $page_class_contact = "border-bottom border-secondary";
-        $bg = "bg-green";
-        break;
-      case 'thanks':
-        $bg = "bg-green";
-        break;
+  default:
+    // IDが1以外のページの処理
+    if (is_post_type_archive('blog') || (is_singular() && get_post_type() === 'blog')) {
+      $bg = 'bg-blue3'; // blogのアーカイブまたは詳細ページの場合
+      $catch = 'text-white opacity-50';
+    } else {
+      switch ($page_title) {
+        case 'About':
+          $page_class_about = 'border-bottom border-secondary';
+          $bg = 'bg-pink';
+          break;
+        case 'Works':
+          $page_class_works = 'border-bottom border-secondary';
+          $bg = 'bg-blue';
+          break;
+        case 'Contact':
+          $page_class_contact = 'border-bottom border-secondary';
+          $bg = 'bg-green';
+          break;
+        case 'thanks':
+          $bg = 'bg-green';
+          break;
+      }
     }
 }
 ?>
 
 <body class="fadein">
 
-  <header class="position-fixed w-100 p-3 <?php echo $page_title ?> <?php echo $bg ?>">
+  <header class="position-fixed w-100 p-3 <?php echo $page_title; ?> <?php echo $bg; ?>">
     <div class="d-flex flex-wrap px-lg-4">
       <a href="/" class="toplogo d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none ">
-        <span class="fs-4 fw-bold">団地のDesigner<br><span class=" fw-light">Portfolio Site</span></span>
+        <span class="fs-4 fw-bold">団地のDesigner<br><span class="fw-light <?php echo $catch; ?>">Portfolio Site</span></span>
       </a>
 
       <!--show lg-->
       <nav class="lg-menu lg-show d-flex align-items-center py-3">
-        <a class="text-decoration-none pb-2 me-3 <?php echo $page_class_about ?> " href="/about">About</a>
-        <a class="text-decoration-none pb-2 me-3 <?php echo $page_class_works ?> " href="/works">Works</a>
-        <a class="text-decoration-none pb-2 me-3 <?php echo $page_class_contact ?>" href="/contact">Contact</a>
+        <a class="text-decoration-none pb-2 me-3 <?php echo $page_class_about; ?> " href="/about">About</a>
+        <a class="text-decoration-none pb-2 me-3 <?php echo $page_class_works; ?> " href="/works">Works</a>
+        <a class="text-decoration-none pb-2 me-3 <?php echo $page_class_contact; ?>" href="/contact">Contact</a>
       </nav>
 
       <!--hide lg-->
@@ -101,4 +107,5 @@ switch ($page_id) {
         </nav>
       </div>
     </div>
+
   </header>

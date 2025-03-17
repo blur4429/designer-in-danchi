@@ -3,6 +3,7 @@ $shiro: #fff;
 $blue1: #d2f8fa;
 $blue2: #9febff;
 $blue3: #1793b6;
+$blue4: #4faacc;
 
 $green1: #eaffb1;
 
@@ -15,11 +16,11 @@ $pink1: #ffdcf1;
 $red: #ff0000;
 
 $breakpoints: (
-  "sm": "screen and (max-width: 767px)",
-  "md": "screen and (min-width: 768px)",
-  "lg": "screen and (min-width: 992px)",
-  "xl": "screen and (min-width: 1200px)",
-  "xxl": "screen and (min-width: 1400px)",
+  'sm': 'screen and (max-width: 767px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 992px)',
+  'xl': 'screen and (min-width: 1200px)',
+  'xxl': 'screen and (min-width: 1400px)',
 ) !default;
 
 @mixin mq($breakpoint: md) {
