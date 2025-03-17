@@ -21,7 +21,12 @@ body {
 
 section {
   display: block;
-  margin: 100px auto !important;
+  margin: 0 auto !important;
+}
+@media screen and (min-width: 992px) {
+  section {
+    margin: 40px auto !important;
+  }
 }
 
 main > div > h1 {
@@ -30,8 +35,9 @@ main > div > h1 {
   color: #fff;
 }
 @media screen and (min-width: 992px) {
- main > div > h1 {
-  font-size: 100px;
+  main > div > h1 {
+    font-size: 120px;
+    padding-top: 40px;
   }
 }
 
@@ -41,116 +47,6 @@ a {
 }
 a:hover {
   opacity: 0.8;
-}
-
-/*ページ内リンク位置調整*/
-#profile {
-  padding-top: 120px;
-  margin-top: -120px; /* ヘッダーの高さ分上にmarginで戻す */
-}
-
-li {
-  list-style-type: none;
-}
-
-.pagetitle {
-  padding-top: 95px;
-}
-@media screen and (min-width: 992px) {
-  .pagetitle {
-    padding-top: 140px;
-  }
-}
-
-/* 
-*pages*
- */
-/*top*/
-#top {
-  background: url(img/top.jpg) no-repeat 36% 0;
-  background-size: cover;
-}
-@media screen and (min-width: 992px) {
-  #top {
-    background: url(img/top.jpg) no-repeat bottom center;
-  }
-}
-#top h1 {
-  animation: fadeIn 3s linear forwards;
-}
-#top h1 a:hover {
-  color: #1793b6;
-  transition: 1s ease all;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-/*about*/
-img.about1 {
-  filter: brightness(0.95);
-}
-
-.post-password-form {
-  /* フォーム全体のスタイル */
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.post-password-form p {
-  max-width: 480px;
-  margin: 0 auto 20px auto;
-}
-
-.post-password-form label {
-  /* ラベルのスタイル */
-  display: block;
-  margin-bottom: 5px;
-}
-
-.post-password-form input[type=password] {
-  /* パスワード入力欄のスタイル */
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-}
-
-.post-password-form input[type=submit] {
-  padding: 5px 10px;
-  background-color: #1793b6;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-/*thanks*/
-.thanks main {
-  background: #eaffb1;
-}
-
-/*notfound*/
-.notfound h1 {
-  font-size: 40px;
-}
-.notfound h1 span {
-  display: block;
-  font-size: 140px;
-}
-@media screen and (min-width: 768px) {
-  .notfound h1 span {
-    font-size: 180px;
-  }
 }
 
 /*nav*/
@@ -311,6 +207,115 @@ nav a:hover {
   background: #eaffb1;
 }
 
+.bg-blue3 {
+  background: #4faacc;
+}
+
+/*ページ内リンク位置調整*/
+#profile {
+  padding-top: 120px;
+  margin-top: -120px; /* ヘッダーの高さ分上にmarginで戻す */
+}
+
+li {
+  list-style-type: none;
+}
+
+.pagetitle {
+  padding-top: 80px;
+}
+
+/* 
+*pages*
+ */
+/*top*/
+#top {
+  background: url(img/top.jpg) no-repeat 36% 0;
+  background-size: cover;
+}
+@media screen and (min-width: 992px) {
+  #top {
+    background: url(img/top.jpg) no-repeat bottom center;
+  }
+}
+#top h1 {
+  animation: fadeIn 3s linear forwards;
+}
+#top h1 a:hover {
+  color: #1793b6;
+  transition: 1s ease all;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*about*/
+img.about1 {
+  filter: brightness(0.95);
+}
+
+.post-password-form {
+  /* フォーム全体のスタイル */
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-password-form p {
+  max-width: 480px;
+  margin: 0 auto 20px auto;
+}
+
+.post-password-form label {
+  /* ラベルのスタイル */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.post-password-form input[type=password] {
+  /* パスワード入力欄のスタイル */
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.post-password-form input[type=submit] {
+  padding: 5px 10px;
+  background-color: #1793b6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/*thanks*/
+.thanks main {
+  background: #eaffb1;
+}
+
+/*notfound*/
+.notfound h1 {
+  font-size: 40px;
+}
+.notfound h1 span {
+  display: block;
+  font-size: 140px;
+}
+@media screen and (min-width: 768px) {
+  .notfound h1 span {
+    font-size: 180px;
+  }
+}
+
 /*
 *slick*
 */
@@ -348,12 +353,66 @@ nav a:hover {
 }
 
 /*
+*smallparts*
+*/
+/*breadcrumb*/
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  padding: 0 0.5em;
+  color: #666;
+}
+.breadcrumb .sl:after {
+  content: "/";
+  padding: 0 0.5em;
+}
+.breadcrumb a:hover {
+  color: #1793b6;
+}
+
+/*category*/
+.category li {
+  padding: 0.5em;
+  width: auto;
+}
+@media screen and (min-width: 992px) {
+  .category li li {
+    padding: 0.5em 1em;
+  }
+}
+.category li a {
+  border-bottom: 1px dotted #666;
+}
+.category li a:hover {
+  color: #1793b6;
+}
+
+/*scroll to top*/
+#page-top {
+  position: fixed;
+  bottom: 5px;
+  right: 20px;
+  line-height: 1;
+  z-index: 99;
+}
+#page-top a {
+  text-decoration: none;
+  display: block;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+#page-top a:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+/*
 *btn*
 */
 /*外部リンク*/
 .btn {
   position: relative;
-  min-height:40px;
+  min-height: 40px;
   border: 1px solid #333333;
   border-radius: 5px;
   z-index: 2;
@@ -393,27 +452,6 @@ nav a:hover {
 
 .btn-modal::before {
   background-image: url(icons/window-plus.svg);
-}
-
-/*scroll to top*/
-#page-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  line-height: 1;
-  z-index: 99;
-}
-
-#page-top a {
-  text-decoration: none;
-  display: block;
-  opacity: 0.9;
-  transition: all 0.3s ease;
-}
-
-#page-top a:hover {
-  text-decoration: none;
-  opacity: 0.5;
 }
 
 /*
@@ -833,14 +871,15 @@ form button:hover {
   color: #aeaeae;
 }
 
-@media screen and (min-width: 992px) {
-  .mb80 {
-    margin-bottom: 80px;
-  }
+/*line-height*/
+.lh-s {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.09em;
 }
 
 .lh {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
   letter-spacing: 0.09em;
 }
@@ -850,11 +889,17 @@ form button:hover {
   padding: 0 0 0 1em;
 }
 
+/*img*/
 .g-scale img {
   filter: grayscale(1);
 }
 .g-scale img:hover {
   filter: grayscale(0);
+}
+
+/*color*/
+.blue3 {
+  color: #1793b6;
 }
 
 /*cssのリセット*/

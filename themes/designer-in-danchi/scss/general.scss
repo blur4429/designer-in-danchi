@@ -15,16 +15,21 @@ body {
 
 section {
   display: block;
-  margin: 100px auto !important;
+  margin: 0 auto !important;
+
+  @include mq(lg) {
+    margin: 40px auto !important;
+  }
 }
 
 main > div > h1 {
- font-size: 80px;
+  font-size: 80px;
   font-weight: normal;
   color: $shiro;
 
   @include mq(lg) {
-    padding-top: 100px;
+    font-size: 120px;
+    padding-top: 40px;
   }
 }
 
@@ -33,128 +38,5 @@ a {
   color: $black1;
   &:hover {
     opacity: 0.8;
-  }
-}
-
-/*ページ内リンク位置調整*/
-#profile {
-  padding-top: 120px;
-  margin-top: -120px; /* ヘッダーの高さ分上にmarginで戻す */
-}
-
-li {
-  list-style-type: none;
-}
-
-.pagetitle {
-  padding-top: 95px;
-
-  @include mq(lg) {
-    padding-top: 140px;
-  }
-}
-
-/* 
-*pages*
- */
-
-/*top*/
-
-#top {
-  background: url(img/top.jpg) no-repeat 36% 0;
-  background-size: cover;
-
-  @include mq(lg) {
-    background: url(img/top.jpg) no-repeat bottom center;
-  }
-
-  h1 {
-    animation: fadeIn 3s linear forwards;
-
-    a:hover {
-      color: $blue3;
-      transition: 1s ease all;
-    }
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/*about*/
-
-img.about1 {
-  filter: brightness(0.95);
-}
-
-.post-password-form {
-  /* フォーム全体のスタイル */
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.post-password-form p {
-  max-width: 480px;
-  margin: 0 auto 20px auto;
-}
-
-.post-password-form label {
-  /* ラベルのスタイル */
-  display: block;
-  margin-bottom: 5px;
-}
-
-.post-password-form input[type="password"] {
-  /* パスワード入力欄のスタイル */
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-}
-
-.post-password-form input[type="submit"] {
-  padding: 5px 10px;
-  background-color: #1793b6;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-/*thanks*/
-
-.thanks {
-  main {
-    background: $green1;
-  }
-}
-
-/*notfound*/
-
-.notfound {
-  h1 {
-    font-size: 40px;
-
-    span {
-      display: block;
-      font-size: 140px;
-
-      @include mq(md) {
-        font-size: 180px;
-      }
-    }
   }
 }

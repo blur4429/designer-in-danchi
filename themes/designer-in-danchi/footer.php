@@ -1,22 +1,22 @@
 <?php
 $page_id = get_the_ID();
-if ($page_id == 19 || $page_id == 17 || $page_id == 21) {
-?>
+if (!is_front_page() && !is_page('thanks')) { ?>
   <div class="container">
     <footer class="py-2 my-4">
       <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Home</a></li>
+        <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">Top</a></li>
         <li class="nav-item"><a href="/about" class="nav-link px-2 text-body-secondary">About</a></li>
         <li class="nav-item"><a href="/works" class="nav-link px-2 text-body-secondary">Works</a></li>
         <li class="nav-item"><a href="/contact" class="nav-link px-2 text-body-secondary">Contact</a></li>
       </ul>
-      <p class="smaller text-center text-body-secondary">©&nbsp;&nbsp;2025&nbsp;&nbsp;<?php echo get_bloginfo('name') ?></p>
+      <p class="smaller text-center text-body-secondary">©&nbsp;&nbsp;2025&nbsp;&nbsp;<?php echo get_bloginfo(
+        'name'
+      ); ?></p>
       <button id="scrollTopButton" onclick="scrollToTop()" style="display: none; position: fixed; bottom: 20px; right: 20px;">トップに戻る</button>
     </footer>
   </div>
 
-<?php
-}
+<?php }
 ?>
 
 <?php wp_footer(); ?>

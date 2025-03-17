@@ -7,12 +7,14 @@ Description: original theme
 Version： 1.0.0
 */
 
-@import "_variables";
-@import "general.scss";
-@import "nav.scss";
-@import "slick.scss";
-@import "btn.scss";
-@import "charts.scss";
-@import "form.scss";
-@import "utility.scss";
-@import "reset.scss";
+@import '_variables';
+@import 'general.scss';
+@import 'nav.scss';
+@import 'page.scss';
+@import 'slick.scss';
+@import 'smallparts.scss';
+@import 'btn.scss';
+@import 'charts.scss';
+@import 'form.scss';
+@import 'utility.scss';
+@import 'reset.scss';

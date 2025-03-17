@@ -1,0 +1,68 @@
+/*
+*smallparts*
+*/
+
+/*breadcrumb*/
+
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  padding: 0 0.5em;
+  color: $gray1;
+
+  .sl {
+    &:after {
+      content: '/';
+      padding: 0 0.5em;
+    }
+  }
+
+  a:hover {
+    color: $blue3;
+  }
+}
+
+/*category*/
+
+.category {
+  li {
+    padding: 0.5em;
+    width: auto;
+
+    @include mq(lg) {
+      li {
+        padding: 0.5em 1em;
+      }
+    }
+
+    a {
+      border-bottom: 1px dotted $gray1;
+
+      &:hover {
+        color: $blue3;
+      }
+    }
+  }
+}
+
+/*scroll to top*/
+
+#page-top {
+  position: fixed;
+  bottom: 5px;
+  right: 20px;
+  line-height: 1;
+  z-index: 99;
+
+  a {
+    text-decoration: none;
+    display: block;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.5;
+    }
+  }
+}
