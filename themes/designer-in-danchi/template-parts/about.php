@@ -2,7 +2,7 @@
 <main>
 
     <div class="pagetitle container-fluid d-md-flex flex-md-wrap align-items-end px-3 px-lg-5 pb-3 bg-pink">
-        <h1 class="me-4 mb-2 mb-md-0">About</h1>
+        <h1 id="fade-title" class="me-4 mb-2 mb-md-0">About</h1>
         <ul class="row align-items-end smaller pb-2">
             <li class="col-auto"><a class="me-1" href="#profile">⚫︎&nbsp;Profile</a></li>
             <li class="col-auto"><a class="me-1" href="#skills">⚫︎&nbsp;Skills</a></li>
@@ -32,27 +32,27 @@
             <div class="col col-lg-10">
                 <!--row2-->
                 <div class="row gy-5">
-                    <div class="col-sm col-lg-7 fs-6 p-3 pe-lg-5">
+                    <div class="col-sm col-lg-7 fs-6 p-3 pe-lg-5 ">
                         <h3 class="mb-4">「団地に住んでるデザイナー」です。</h3>
-                        <p class="fs-6 lh mb-3">神奈川県出身。長らく事務系派遣に従事するもリーマンショックを機に一念発起し、職業訓練校を卒業したのみでWebデザイナーに転身、
+                        <p class="fs-6 lh mb-4">神奈川県出身。長らく事務系派遣に従事するもリーマンショックを機に一念発起し、職業訓練校を卒業したのみでWebデザイナーに転身、
                             2024年にお世話になった企業からフリーのWebデザイナーとして巣立ちました。</p>
 
-                        <p class="fs-6 lh mb-3">
+                        <p class="fs-6 lh mb-4">
                             シンプル、ミニマルでインパクトがあるデザインが好きですが、
                             仕事以外に暮らしぶりにもそれらを反映させています。</p>
 
-                        <p class="fs-6 lh mb-3">
+                        <p class="fs-6 lh mb-4">
                             新しいものを買う前にありモノを工夫して使う、作れるものは自分で作るなど、
-                            最小のリソースでいかに心地よくすてきに暮らすかということをよく考え、実践することを楽しんでいます。</p>
+                            最小のリソースでいかに心地よくすてきに暮らすかということを考え、実践することを楽しんでいます。</p>
 
-                        <p class="fs-6 lh mb-3">
-                            団地というと古くてダサくて狭い、という印象があるかもしれませんが、<br class="lg-show">
+                        <p class="fs-6 lh mb-4">
+                            団地というと古くて狭いという印象があるかもしれませんが、
                             全戸日当たり抜群、近隣住民がフレンドリー、手入れされた樹木や植物がたくさんあるなど、良いところも沢山あるのです。</p>
 
-                        <p class="fs-6 lh mb-3">
+                        <p class="fs-6 lh">
                             公園で遊ぶ子供達の笑い声、お年寄りの井戸端会議、移動式の豆腐店や図書館の親しみを感じるやかましさ、
                             鴨やメジロ、鶯などのかわいい啼き声..癒しもたくさんあります。<br>
-                            お気に入りの環境で、四季を感じながら制作を行なっています。</p>
+                            お気に入りの環境で、四季を感じながら制作をしています。</p>
                     </div>
                     <div class="col-sm col-lg-5 px-3 pb-3">
                         <img class="about1" src="<?php echo $url; ?>/img/about1.jpg" alt="about1">
@@ -89,37 +89,47 @@
                                 本サイトは、WordPressのテーマを自作し、Docker、Github、AWS Lightsailを利用して、
                                 開発環境の構築からデプロイまでの一連のフローを構築しました。</p>
                             <p class="col-7 col-lg-6 mb-5">
-                                <a class="btn btn-ob smaller h-100 d-block p-2" href="https://codepen.io/mazaka" target="_blank">Codepen</a>
+                                <a class="btn btn-ob smaller h-100 d-block p-2" href="https://codepen.io/mazaka"
+                                    target="_blank">Codepen</a>
                             </p>
 
                             <h3 class="fs-5 mb-2">Other</h3>
                             <p class="lh mb-2">長期間に渡り、事務系スキルの中でもデザインを活かしてきました。<br>
-                                社内プレゼン資料作成、自作関数作成、社内各種レクチャー、HTMLメール作成、スクレイピング、マーケティングオートメーション(<a href="https://business.adobe.com/products/marketo.html#" target="_blank">Marketo</a>&nbsp;<img class="icons" src="<?php echo $url; ?>/icons/box-arrow-up-right.svg">)の運用と支援など多数経験しています。
+                                社内プレゼン資料作成、自作関数作成、社内各種レクチャー、HTMLメール作成、スクレイピング、マーケティングオートメーション(<a
+                                    href="https://business.adobe.com/products/marketo.html#"
+                                    target="_blank">Marketo</a>&nbsp;<img class="icons"
+                                    src="<?php echo $url; ?>/icons/box-arrow-up-right.svg">)の運用と支援など多数経験しています。
                             </p>
                             <ul class="lh mb-4">
-                                <li class="ti mb-2">・Microsoft MOUS expert<br>for Excel,WORD,PowerPoint,Access(2001年) </li>
-                                <li class="ti mb-2">・Microsoft MOT(Microsoft Official Trainer) for Excel,WORD(2002年) </li>
+                                <li class="ti mb-2">・Microsoft MOUS expert<br>for Excel,WORD,PowerPoint,Access(2001年)
+                                </li>
+                                <li class="ti mb-2">・Microsoft MOT(Microsoft Official Trainer) for Excel,WORD(2002年)
+                                </li>
                                 <li class="ti mb-2">・VBAエキスパート資格取得(2009年)
                                 <li class="ti mb-2">・Googleアナリティクス(GAIQ)認定資格取得(2016年)</li>
                             </ul>
 
                             <!-- ★★Button trigger modal★★-->
-                            <p class="col-7 col-lg-6"><button type="button" class="btn btn-modal smaller h-100 w-100" data-bs-toggle="modal" data-bs-target="#skillModal">
+                            <p class="col-7 col-lg-6"><button type="button" class="btn btn-modal smaller h-100 w-100"
+                                    data-bs-toggle="modal" data-bs-target="#skillModal">
                                     Skill Details</button></p>
                         </div>
                         <!--right２-->
                         <div class="col-sm col-lg-5 g-scale p-3">
-                            <p class="bg-white p-3 mb-5"><img src="<?php echo $url; ?>/img/about_skills.jpg" alt="skills"></p>
+                            <p class="bg-white p-3 mb-5"><img src="<?php echo $url; ?>/img/about_skills.jpg"
+                                    alt="skills"></p>
                             <?php include locate_template('/template-parts/raderchart.php'); ?>
                         </div>
 
                         <!-- Modal skill detail-->
-                        <div class="modal fade" id="skillModal" tabindex="-1" aria-labelledby="skillModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="skillModal" tabindex="-1" aria-labelledby="skillModalLabel"
+                            aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title text-center fs-5" id="skillModalLabel">Skill Details</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body x-small px-5 pb-5">
                                         <ul class="row d-flex justify-content-between fw-light p-0 mb-2">
@@ -305,14 +315,16 @@
                                             <div class="p-2 flex-shrink-1">4.5</div>
                                         </div>
 
-                                    </div><!--//modal-body-->
+                                    </div>
+                                    <!--//modal-body-->
                                 </div>
                             </div>
                         </div>
                         <!--// Modal -->
 
                     </div>
-                </div><!--col col-lg-10-->
+                </div>
+                <!--col col-lg-10-->
             </div>
         </div>
     </section>

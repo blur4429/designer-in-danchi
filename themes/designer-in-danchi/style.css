@@ -4,7 +4,12 @@ Theme Name: designer-in-danchi
 Author: mazaka
 Description: original theme
 Version： 1.0.0
+Dart Sass 1.33.0
 */
+/* 
+*pages*
+ */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 /*
 *general*
 */
@@ -15,8 +20,8 @@ body {
 
 body {
   background: #d2f8fa;
-  animation: fadeIn 2s ease forwards; /* fadeInアニメーションを0.3秒かけて実行 */
-  opacity: 0; /* 初期状態は透明 */
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
 }
 
 section {
@@ -41,15 +46,40 @@ main > div > h1 {
   }
 }
 
+h4 {
+  margin: 2rem 0 !important;
+}
+
+h5 {
+  margin: 0.5rem 0 !important;
+}
+
+ul,
+ol {
+  padding-left: 1rem !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  padding-left: 0 !important;
+}
+
+ul li {
+  list-style-type: none;
+}
+
 a {
   text-decoration: none;
-  color: #333333;
+  color: #1793b6;
 }
 a:hover {
   opacity: 0.8;
 }
 
-/*nav*/
+/*
+*nav*
+*/
 header {
   z-index: 10;
 }
@@ -58,7 +88,7 @@ header {
   display: block;
   font-style: italic;
   font-size: 0.5em;
-  color: #666;
+  color: #1793b6;
 }
 
 nav a:hover {
@@ -91,7 +121,7 @@ nav a:hover {
   transform: translateY(-11px) translateX(0) rotate(-45deg);
 }
 .button_container span {
-  background: #333333;
+  background: #1793b6;
   border: none;
   height: 3px;
   width: 100%;
@@ -110,7 +140,7 @@ nav a:hover {
 
 .overlay {
   position: fixed;
-  background: #ffdcf1;
+  background: #9febff;
   top: 0;
   left: 0;
   width: 100%;
@@ -195,6 +225,10 @@ nav a:hover {
     left: 0;
   }
 }
+.border-blue {
+  border-bottom: 1px solid #1793b6;
+}
+
 .bg-pink {
   background: #ffdcf1;
 }
@@ -208,50 +242,74 @@ nav a:hover {
 }
 
 .bg-blue3 {
-  background: #4faacc;
+  background: #54b1d4;
 }
 
 /*ページ内リンク位置調整*/
 #profile {
   padding-top: 120px;
-  margin-top: -120px; /* ヘッダーの高さ分上にmarginで戻す */
-}
-
-li {
-  list-style-type: none;
+  margin-top: -120px;
+  /* ヘッダーの高さ分上にmarginで戻す */
 }
 
 .pagetitle {
   padding-top: 80px;
 }
 
-/* 
-*pages*
- */
+/*page title*/
+#fade-title {
+  transition: opacity 0.5s ease-in-out;
+  /* 2秒かけてフェードアウト */
+  opacity: 1;
+  /* 初期状態は表示 */
+}
+
 /*top*/
 #top {
-  background: url(img/top.jpg) no-repeat 36% 0;
+  background: url(img/topimg.jpg) no-repeat 45% 0;
   background-size: cover;
 }
 @media screen and (min-width: 992px) {
   #top {
-    background: url(img/top.jpg) no-repeat bottom center;
+    background: url(img/topimg.jpg) no-repeat top center;
+    background-size: cover;
   }
 }
 #top h1 {
-  animation: fadeIn 3s linear forwards;
-}
-#top h1 a:hover {
   color: #1793b6;
-  transition: 1s ease all;
 }
 
-@keyframes fadeIn {
+.cursor {
+  position: relative;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 0px solid rgba(255, 255, 255, 0.75);
+  font-size: 30px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+.typewriter-animation {
+  animation: typewriter 5s steps(50) 1s 1 normal both, blinkingCursor 400ms steps(50) normal;
+}
+
+@keyframes typewriter {
   from {
-    opacity: 0;
+    width: 0;
   }
   to {
-    opacity: 1;
+    width: 100%;
+  }
+}
+@keyframes blinkingCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
   }
 }
 /*about*/
@@ -265,8 +323,11 @@ img.about1 {
   height: 100%;
   padding: 0;
   margin: 0;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-justify-content: center;
   justify-content: center;
 }
 
@@ -302,6 +363,63 @@ img.about1 {
   background: #eaffb1;
 }
 
+/*custom post*/
+#sidebar-nav {
+  position: sticky;
+  top: 100px;
+  background: transparent;
+}
+#sidebar-nav .nav-pills a.nav-link {
+  color: #666 !important;
+}
+#sidebar-nav .nav-pills a.nav-link ul a.nav-link {
+  margin: 0;
+}
+#sidebar-nav .nav-pills .nav-link.active,
+#sidebar-nav .nav-pills .show > .nav-link {
+  background: transparent;
+  color: #1793b6 !important;
+}
+
+.blog-title {
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 992px) {
+  .blog-title {
+    margin-bottom: 100px;
+  }
+}
+
+.blog-cat {
+  color: #1793b6;
+}
+.blog-cat a {
+  color: #1793b6;
+}
+
+.target-div {
+  scroll-margin-top: 100px;
+}
+.target-div div h4 {
+  scroll-margin-top: 100px;
+}
+.target-div div ol li,
+.target-div div ul li {
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 992px) {
+  .target-div div ol,
+  .target-div div ul {
+    padding-left: 2rem !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  .target-div div > div,
+  .target-div div > p {
+    padding-left: 1.5rem !important;
+  }
+}
+
 /*notfound*/
 .notfound h1 {
   font-size: 40px;
@@ -325,25 +443,35 @@ img.about1 {
 .responsive .prev-arrow {
   display: block;
   position: absolute;
-  width: 30px;
   left: 0;
   top: 45%;
   z-index: 5;
 }
-.responsive .prev-arrow img {
+.responsive .prev-arrow::before {
+  content: "";
+  display: block;
   width: 30px;
+  height: 30px;
+  background-image: url("icons/chevron-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   rotate: 180deg;
 }
 .responsive .next-arrow {
   display: block;
   position: absolute;
-  width: 30px;
   right: 0;
   top: 45%;
   z-index: 5;
 }
-.responsive .next-arrow img {
+.responsive .next-arrow::after {
+  content: "";
+  display: block;
   width: 30px;
+  height: 30px;
+  background-image: url("icons/chevron-right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .responsive .slick-dots {
   bottom: -2em;
@@ -380,9 +508,6 @@ img.about1 {
     padding: 0.5em 1em;
   }
 }
-.category li a {
-  border-bottom: 1px dotted #666;
-}
 .category li a:hover {
   color: #1793b6;
 }
@@ -406,6 +531,94 @@ img.about1 {
   opacity: 0.5;
 }
 
+:not(pre) > code[class*=language-],
+pre[class*=language-] {
+  background: #f8f9fa !important;
+}
+
+.token.class-name,
+.token.function {
+  color: #1793b6 !important;
+}
+
+.code-block {
+  position: relative;
+  font-size: 15px;
+}
+.code-block pre,
+.code-block code {
+  margin: 0;
+  white-space: pre-line;
+  font-family: "Noto Sans JP", monospace;
+  line-height: 1.5;
+}
+.code-block pre code[data-language]::before {
+  content: attr(data-language);
+  display: block;
+  padding: 5px 10px;
+  background-color: #aeaeae;
+  border-radius: 0 0 3px 3px;
+  font-size: 0.8em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-shadow: none;
+  color: #fff;
+  border-bottom: 0.5px solid #ccc;
+}
+.code-block code {
+  position: relative;
+  display: inline-block;
+  padding-top: 1em;
+}
+.code-block pre {
+  padding: 0 0.5em 0.5em 0.5em !important;
+  tab-size: 2;
+}
+@media screen and (min-width: 768px) {
+  .code-block pre {
+    padding: 0 1em 1em 1.5em !important;
+  }
+}
+.code-block .token.cdata,
+.code-block .token.comment,
+.code-block .token.doctype,
+.code-block .token.prolog {
+  font-style: italic !important;
+  color: #aeaeae !important;
+}
+
+.copy-button {
+  position: absolute;
+  /* 絶対位置指定 */
+  top: 5px;
+  right: 5px;
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 14px;
+  background: transparent;
+  color: #aeaeae;
+}
+
+/*list-group*/
+ul.bullet-list {
+  padding-left: 1.5em !important;
+}
+ul.bullet-list li {
+  list-style-type: disc;
+}
+
+/*postnav*/
+.postnav {
+  margin-top: 60px;
+}
+@media screen and (min-width: 992px) {
+  .postnav {
+    margin-top: 100px;
+  }
+}
+
 /*
 *btn*
 */
@@ -417,6 +630,7 @@ img.about1 {
   border-radius: 5px;
   z-index: 2;
   overflow: hidden;
+  -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
 .btn:hover {
@@ -792,9 +1006,6 @@ img.about1 {
 form label span {
   color: #ff0000;
 }
-form input::-moz-placeholder, form textarea::-moz-placeholder {
-  color: #ccc;
-}
 form input::placeholder,
 form textarea::placeholder {
   color: #ccc;
@@ -879,6 +1090,7 @@ form button:hover {
 }
 
 .lh {
+  overflow: hidden;
   font-size: 15px;
   line-height: 1.7;
   letter-spacing: 0.09em;
@@ -1089,3 +1301,5 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/*# sourceMappingURL=style.css.map */

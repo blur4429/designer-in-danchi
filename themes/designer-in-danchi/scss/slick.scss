@@ -1,6 +1,7 @@
 /*
 *slick*
 */
+@use 'variables' as v;
 
 .responsive {
   z-index: 0;
@@ -8,13 +9,18 @@
   .prev-arrow {
     display: block;
     position: absolute;
-    width: 30px;
     left: 0;
     top: 45%;
     z-index: 5;
 
-    img {
+    &::before {
+      content: '';
+      display: block;
       width: 30px;
+      height: 30px;
+      background-image: url('icons/chevron-right.svg');
+      background-repeat: no-repeat;
+      background-position: center;
       rotate: 180deg;
     }
   }
@@ -22,13 +28,18 @@
   .next-arrow {
     display: block;
     position: absolute;
-    width: 30px;
     right: 0;
     top: 45%;
     z-index: 5;
 
-    img {
+    &::after {
+      content: '';
+      display: block;
       width: 30px;
+      height: 30px;
+      background-image: url('icons/chevron-right.svg');
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 

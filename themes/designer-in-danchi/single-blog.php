@@ -1,56 +1,84 @@
 <?php get_header();
-$url = get_template_directory_uri();
 ?>
 
 <main>
     <div class="pagetitle container-fluid d-md-flex flex-md-wrap align-items-end px-3 px-lg-5 pb-3 bg-blue3">
-        <h1 class="me-4 mb-2 mb-md-1">Blog</h1>
+        <h1 id="fade-title" class="me-4 mb-2 mb-md-1">Blog</h1>
     </div>
     <!--breadcrumb-->
     <div class="container breadcrumb fw-light p-2 mt-5">
         <?php if (function_exists('custom_breadcrumb')) {
-          custom_breadcrumb();
+            custom_breadcrumb();
         } ?>
     </div>
 
     <section class="container">
-
         <div class="row">
-            <div class="col col-lg-10 mx-auto mb-5">
 
-                <?php while (have_posts()):
-                  the_post(); ?>
-                    <ul class="d-flex flex-row smaller fw-light p-0 m-0 mb-2">
-                        <li class="pe-3"><?php the_date('Y-n-j'); ?></li>
-                        <li><?php the_category(', '); ?></li>
-                    </ul>
-                    <h2 class="fs-2 fw-light p-0 m-0 mb-5"><?php the_title(); ?></h2>
+            <div class="col">
 
-                    <?php
-                    if (has_post_thumbnail()): ?>
-                        <div class="post-thumbnail mb-5">
-                            <?php the_post_thumbnail(); ?>
+                <!--title row2-->
+                <div class="row row-cols-1 row-cols-lg-2 blog-title">
+                    <!--left-->
+                    <div class="col col-lg-6 h-auto d-flex align-items-center">
+
+                        <?php while (have_posts()):
+                            the_post();
+                            $categories = get_the_category(); // カテゴリーオブジェクトの配列を取得
+                            ?>
+                        <div>
+                            <p class="fw-light mb-2">
+                                <span class="pe-3"><?php the_date('Y-n-j'); ?></span>
+                                <span class="blog-cat">#
+                                    <?php
+                                        if (!empty($categories)) {
+                                            foreach ($categories as $category) {
+                                                echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" rel="category tag">' . esc_html($category->name) . '</a>';
+                                            }
+                                        }
+                                        ?>
+                                </span>
+                            </p>
+                            <h2 class="fs-2 fw-light p-0 m-0 mb-5"><?php the_title(); ?></h2>
                         </div>
-                <?php endif;
-                    the_content();
+                    </div>
+                    <!--right-->
+                    <div class="col col-lg-6">
+                        <?php the_post_thumbnail(); ?>
 
-                endwhile; ?>
+                    </div>
+                </div>
+                <!--//title row2-->
 
+                <!--post row2-->
+                <div class="row row-cols-1 row-cols-lg-2 mb-5">
+                    <?php
+                        the_content();
+                        endwhile; ?>
+
+                    <div class="postnav fw-light ps-lg-5">
+                        <!--back and forth-->
+                        <div class="d-flex justify-content-between smaller px-lg-4">
+                            <div class="nav-previous"><?php previous_post_link('%link', '< %date'); ?></div>
+                            <div class="nav-next"><?php next_post_link('%link', '%date >'); ?></div>
+                        </div>
+                        <!--category-->
+                        <div class="col border-top border-bottom p-3 p-md-5 my-5">
+                            <?php include(get_template_directory() . '/template-parts/category.php'); ?>
+                        </div>
+                    </div>
+
+                </div>
+                <!--//col-lg-9-->
             </div>
-            </div>
-          <!--category-->
-          <div class="col col-lg-10 mx-auto bg-light p-3 p-md-5 my-5">
-            
-                <h3 class="text-center mb-4">Category</h3>
-                <ul class="row row-cols-2 row-cols-md-4 category d-lg-flex justify-content-center text-center fw-light">
-                    <?php wp_list_categories([
-                      'taxonomy' => 'category', // カテゴリータクソノミーを指定
-                      'show_count' => 1, // 投稿数を表示
-                      'title_li' => '', // タイトルを非表示
-                    ]); ?>
-                </ul>
-            </div>
+            <!--//post row2-->
+
+        </div>
+        <!--//col★-->
+        </div>
+        <!--//row-->
+
     </section>
 </main>
 
-<?php get_footer();
+<?php get_footer(); ?>

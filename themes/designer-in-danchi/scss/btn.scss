@@ -1,13 +1,14 @@
 /*
 *btn*
 */
+@use 'variables' as v;
 
 /*外部リンク*/
 
 .btn {
   position: relative;
   min-height: 40px;
-  border: 1px solid $black1;
+  border: 1px solid v.$black1;
   border-radius: 5px;
   z-index: 2;
   overflow: hidden;
@@ -15,7 +16,7 @@
   transition: all 0.4s;
 
   &:hover {
-    border: 1px solid $black1;
+    border: 1px solid v.$black1;
   }
 
   &::before {

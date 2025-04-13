@@ -1,7 +1,7 @@
 <?php $url = get_template_directory_uri(); ?>
 <main>
     <div class="pagetitle container-fluid d-md-flex flex-md-wrap align-items-end px-3 px-lg-5 pb-3 bg-green">
-        <h1 class="me-4 mb-2 mb-md-0">Contact</h1>
+        <h1 id="fade-title" class="me-4 mb-2 mb-md-0">Contact</h1>
     </div>
     <!--breadcrumb-->
     <div class="container breadcrumb fw-light p-2 mt-5">

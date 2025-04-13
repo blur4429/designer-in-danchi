@@ -1,6 +1,7 @@
 /*
 *general*
 */
+@use 'variables' as v;
 
 html,
 body {
@@ -8,34 +9,59 @@ body {
 }
 
 body {
-  background: $blue1;
-  animation: fadeIn 2s ease forwards; /* fadeInアニメーションを0.3秒かけて実行 */
-  opacity: 0; /* 初期状態は透明 */
+  background: v.$blue1;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
 }
 
 section {
   display: block;
   margin: 0 auto !important;
 
-  @include mq(lg) {
+  @include v.mq(lg) {
     margin: 40px auto !important;
   }
 }
 
-main > div > h1 {
+main>div>h1 {
   font-size: 80px;
   font-weight: normal;
-  color: $shiro;
+  color: v.$shiro;
 
-  @include mq(lg) {
+  @include v.mq(lg) {
     font-size: 120px;
     padding-top: 40px;
   }
 }
 
+h4 {
+  margin: 2rem 0 !important;
+}
+
+h5 {
+  margin: 0.5rem 0 !important;
+}
+
+ul,
+ol {
+  padding-left: 1rem !important;
+
+  ul,
+  ol {
+    padding-left: 0 !important;
+  }
+}
+
+ul {
+  li {
+    list-style-type: none;
+  }
+}
+
 a {
   text-decoration: none;
-  color: $black1;
+  color: v.$blue3;
+
   &:hover {
     opacity: 0.8;
   }

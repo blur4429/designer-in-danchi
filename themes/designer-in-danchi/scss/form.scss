@@ -1,28 +1,30 @@
 /*
 *form*
 */
+@use 'variables' as v;
 
 form {
   label {
     span {
-      color: $red;
+      color: v.$red;
     }
   }
 
   input::placeholder,
   textarea::placeholder {
-    color: #ccc;
+    color: v.$gray3;
   }
+
   textarea {
     resize: vertical !important;
     min-height: 180px;
   }
 
   button {
-    background: $green1;
+    background: v.$green1;
 
     &:hover {
-      background: $blue2;
+      background: v.$blue2;
       transition: 0.5s ease all;
     }
   }
