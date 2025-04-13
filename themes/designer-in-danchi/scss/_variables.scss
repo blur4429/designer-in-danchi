@@ -1,15 +1,15 @@
-$shiro: #fff;
+@use 'sass:map';
 
+$shiro: #fff;
 $blue1: #d2f8fa;
 $blue2: #9febff;
 $blue3: #1793b6;
-$blue4: #4faacc;
-
+$blue4: #54b1d4;
 $green1: #eaffb1;
-
 $gray1: #666;
 $gray2: #aeaeae;
 $gray3: #ccc;
+$gray4: #f8f9fa;
 
 $black1: #333333;
 $pink1: #ffdcf1;
@@ -21,10 +21,15 @@ $breakpoints: (
   'lg': 'screen and (min-width: 992px)',
   'xl': 'screen and (min-width: 1200px)',
   'xxl': 'screen and (min-width: 1400px)',
-) !default;
+  ) !default;
 
-@mixin mq($breakpoint: md) {
-  @media #{map-get($breakpoints, $breakpoint)} {
+@mixin mq($breakpoint) {
+
+  // 引数名を $breakpoint に変更
+  @media #{map.get($breakpoints, $breakpoint)} {
+    // 第2引数を $breakpoint に変更
     @content;
+
   }
+
 }

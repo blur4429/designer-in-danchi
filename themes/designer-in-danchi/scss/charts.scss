@@ -1,6 +1,7 @@
 /*
 *charts*
 */
+@use 'variables' as v;
 
 .modal-header {
   border: none;
@@ -10,18 +11,20 @@
   &::-webkit-scrollbar {
     width: 8px;
   }
+
   &::-webkit-scrollbar-track {
     padding: 1em;
   }
+
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background: $gray2;
+    background: v.$gray2;
   }
 }
 
 .ruler {
   position: relative;
-  border-bottom: 1px dotted $black1;
+  border-bottom: 1px dotted v.$black1;
 
   &:before,
   &:after {
@@ -30,7 +33,7 @@
     position: absolute;
     height: 14px;
     top: -6px;
-    border: 0 solid $black1;
+    border: 0 solid v.$black1;
   }
 
   &:before {
@@ -52,12 +55,12 @@
 
     &.arrow-left {
       left: -5px;
-      border-right-color: $black1;
+      border-right-color: v.$black1;
     }
 
     &.arrow-right {
       right: -5px;
-      border-left-color: $black1;
+      border-left-color: v.$black1;
     }
   }
 }
@@ -104,26 +107,32 @@
   width: 90%;
   animation: a4 0.5s ease-in-out;
 }
+
 .one_2 {
   width: 80%;
   animation: a4 0.7s ease-in-out;
 }
+
 .one_3 {
   width: 80%;
   animation: a4 1s ease-in-out;
 }
+
 .one_4 {
   width: 80%;
   animation: a4 1.25s ease-in-out;
 }
+
 .one_5 {
   width: 80%;
   animation: a4 1.35s ease-in-out;
 }
+
 .one_6 {
   width: 60%;
   animation: a3 1.75s ease-in-out;
 }
+
 .one_7 {
   width: 100%;
   animation: a5 2s ease-in-out;
@@ -135,26 +144,32 @@
   width: 90%;
   animation: a45 2.05s ease-in-out;
 }
+
 .two_2 {
   width: 90%;
   animation: a45 2.1s ease-in-out;
 }
+
 .two_3 {
   width: 60%;
   animation: a3 2.15s ease-in-out;
 }
+
 .two_4 {
   width: 40%;
   animation: a2 2.205s ease-in-out;
 }
+
 .two_5 {
   width: 60%;
   animation: a3 2.25s ease-in-out;
 }
+
 .two_6 {
   width: 40%;
   animation: a2 2.3s ease-in-out;
 }
+
 .two_7 {
   width: 60%;
   animation: a3 2.35s ease-in-out;
@@ -166,38 +181,47 @@
   width: 90%;
   animation: a45 2.4s ease-in-out;
 }
+
 .three_2 {
   width: 60%;
   animation: a3 2.45s ease-in-out;
 }
+
 .three_3 {
   width: 40%;
   animation: a2 2.5s ease-in-out;
 }
+
 .three_4 {
   width: 40%;
   animation: a2 2.55s ease-in-out;
 }
+
 .three_5 {
   width: 60%;
   animation: a3 2.6s ease-in-out;
 }
+
 .three_6 {
   width: 60%;
   animation: a3 2.65s ease-in-out;
 }
+
 .three_7 {
   width: 80%;
   animation: a4 2.7s ease-in-out;
 }
+
 .three_8 {
   width: 40%;
   animation: a2 2.75s ease-in-out;
 }
+
 .three_9 {
   width: 40%;
   animation: a2 2.75s ease-in-out;
 }
+
 .three_10 {
   width: 80%;
   animation: a4 2.8s ease-in-out;
@@ -209,22 +233,27 @@
   width: 90%;
   animation: a45 2.85s ease-in-out;
 }
+
 .four_2 {
   width: 90%;
   animation: a45 2.9s ease-in-out;
 }
+
 .four_3 {
   width: 80%;
   animation: a4 2.95s ease-in-out;
 }
+
 .four_4 {
   width: 40%;
   animation: a2 3s ease-in-out;
 }
+
 .four_5 {
   width: 80%;
   animation: a4 3.1s ease-in-out;
 }
+
 .four_6 {
   width: 90%;
   animation: a45 3.15s ease-in-out;
@@ -234,14 +263,17 @@
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
 }
+
 @keyframes a45 {
   from {
     width: 0;
   }
+
   to {
     width: 90%;
   }
@@ -251,14 +283,17 @@
   from {
     width: 0;
   }
+
   to {
     width: 80%;
   }
 }
+
 @keyframes a35 {
   from {
     width: 0;
   }
+
   to {
     width: 70%;
   }
@@ -268,6 +303,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 60%;
   }
@@ -277,6 +313,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 50%;
   }
@@ -286,6 +323,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 40%;
   }
@@ -295,6 +333,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 30%;
   }
@@ -304,6 +343,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 20%;
   }
@@ -313,16 +353,18 @@
 .bar-2,
 .bar-3,
 .bar-4 {
-  background: $blue3;
-  color: $shiro;
+  background: v.$blue3;
+  color: v.$shiro;
 }
 
 .bar-1 {
   opacity: 0.5;
 }
+
 .bar-2 {
   opacity: 0.6;
 }
+
 .bar-3 {
   opacity: 0.8;
 }

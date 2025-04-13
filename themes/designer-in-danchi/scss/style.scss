@@ -5,16 +5,17 @@ Theme Name: designer-in-danchi
 Author: mazaka
 Description: original theme
 Version： 1.0.0
+Dart Sass 1.33.0
 */
-
-@import '_variables';
-@import 'general.scss';
-@import 'nav.scss';
-@import 'page.scss';
-@import 'slick.scss';
-@import 'smallparts.scss';
-@import 'btn.scss';
-@import 'charts.scss';
-@import 'form.scss';
-@import 'utility.scss';
-@import 'reset.scss';
+// style.scss
+@use 'variables' as v;
+@use 'general';
+@use 'nav';
+@use 'page';
+@use 'slick';
+@use 'smallparts';
+@use 'btn';
+@use 'charts';
+@use 'form';
+@use 'utility';
+@use 'reset';

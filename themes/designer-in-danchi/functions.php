@@ -1,22 +1,25 @@
 <?php
 //テーマのセットアップ
-// HTML5でマークアップさせる
-add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption']);
-// Feedのリンクを自動で生成する
-add_theme_support('automatic-feed-links');
-//アイキャッチ画像を使用する設定
-add_theme_support('post-thumbnails');
+function my_theme_setup()
+{
+  // HTML5でマークアップさせる
+  add_theme_support('html5', ['search-form', 'comment-form', 'comment-list', 'gallery', 'caption']);
+  // Feedのリンクを自動で生成する
+  add_theme_support('automatic-feed-links');
+  //アイキャッチ画像を使用する設定
+  add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'my_theme_setup');
 
 //googleフォント読み込み
 function myTheme_enqueue_googleFont()
 {
-  echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . PHP_EOL;
-
-  echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . PHP_EOL;
-
-  echo '<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,200&display=swap" rel="stylesheet">' .
-    PHP_EOL;
-  //Noto Sans JP + アイコン
+  wp_enqueue_style(
+    'google-fonts',
+    'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,200&display=swap',
+    [],
+    null
+  );
 }
 add_action('wp_enqueue_scripts', 'myTheme_enqueue_googleFont');
 
@@ -43,46 +46,13 @@ function display_page_id($column, $post_id)
 }
 add_action('manage_pages_custom_column', 'display_page_id', 10, 2);
 
-//自動整形を無効化
+// 自動整形を無効化
 function my_remove_wpautop()
 {
   remove_filter('the_content', 'wpautop');
+  remove_filter('the_excerpt', 'wpautop'); // 抜粋の自動整形も無効化する場合
 }
 add_action('init', 'my_remove_wpautop');
-
-//カスタム投稿タイプ「LP」でのみ自動的に<p>や<br>タグ削除
-
-function my_pre_wpautop($content)
-{
-  if (is_singular('LP')) {
-    // カスタム投稿タイプ「LP」の場合
-    remove_filter('the_content', 'wpautop');
-  }
-  return $content;
-}
-add_filter('the_content', 'my_pre_wpautop', 0);
-
-//カテゴリーの追加
-function add_blog_categories()
-{
-  register_taxonomy_for_object_type('category', 'blog');
-}
-add_action('init', 'add_blog_categories');
-
-//タグの追加
-function add_blog_tags()
-{
-  register_taxonomy_for_object_type('post_tag', 'blog');
-}
-add_action('init', 'add_blog_tags');
-
-//アイキャッチ画像サポート
-function setup_blog_theme()
-{
-  add_theme_support('post-thumbnails');
-  add_post_type_support('blog', 'thumbnail'); // カスタム投稿タイプ 'blog' にアイキャッチ画像のサポートを追加
-}
-add_action('after_setup_theme', 'setup_blog_theme');
 
 //カッコを非表示にする
 function custom_list_categories_output($output, $args)
@@ -146,7 +116,47 @@ function custom_breadcrumb()
     } elseif (is_year()) {
       echo '<li class="sl">' . esc_html(get_the_time('Y')) . '</li>';
     }
+  } elseif (is_category()) {
+    echo '<li class="sl"><a href="' . esc_url($home_url . 'blog') . '">blog</a></li>';
+    echo '<li># ' . esc_html(single_cat_title('', false)) . '</li>';
   }
 
   echo '</ul>';
 }
+
+//カテゴリーアーカイブページのURLをリライト
+function custom_category_rewrite_rules($wp_rewrite) {
+  $rules = array();
+  $categories = get_categories(array('hide_empty' => false));
+  foreach ($categories as $category) {
+    $rules['blog-cat/' . $category->slug . '/?$' ] = 'index.php?category_name=' . $category->slug;
+  }
+  $wp_rewrite->rules = array_merge($rules, $wp_rewrite->rules);
+}
+add_action('generate_rewrite_rules', 'custom_category_rewrite_rules');
+
+function custom_category_link($link, $term_id, $taxonomy) {
+  if ($taxonomy === 'category') {
+    $category = get_term($term_id, $taxonomy);
+    $link = str_replace('/category/', '/blog-cat/', $link);
+  }
+  return $link;
+}
+add_filter('term_link', 'custom_category_link', 10, 3);
+
+function custom_category_query_vars($public_query_vars) {
+  $public_query_vars[] = 'category_name';
+  return $public_query_vars;
+}
+add_filter('query_vars', 'custom_category_query_vars');
+
+//blog投稿をテキストエディタにする
+function disable_visual_editor_custom_post_type($settings, $post) {
+  if ($post->post_type == 'blog') { // カスタム投稿タイプ名を指定
+      $settings['tinymce'] = false; // ビジュアルエディタを無効化
+      $settings['quicktags'] = true; // テキストエディタを有効化
+      $settings['media_buttons'] = false; // メディアボタンを無効化（必要に応じて）
+  }
+  return $settings;
+}
+add_filter('wp_editor_settings', 'disable_visual_editor_custom_post_type', 10, 2);

@@ -1,35 +1,66 @@
 /* 
 *pages*
  */
+@use 'variables' as v;
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
 
 /*top*/
 
 #top {
-  background: url(img/top.jpg) no-repeat 36% 0;
+  background: url(img/topimg.jpg) no-repeat 45% 0;
   background-size: cover;
 
-  @include mq(lg) {
-    background: url(img/top.jpg) no-repeat bottom center;
+  @include v.mq(lg) {
+    background: url(img/topimg.jpg) no-repeat top center;
+    background-size: cover;
   }
 
   h1 {
-    animation: fadeIn 3s linear forwards;
+    color: v.$blue3;
 
-    a:hover {
-      color: $blue3;
-      transition: 1s ease all;
-    }
   }
 }
 
-@keyframes fadeIn {
+.cursor {
+  position: relative;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 0px solid rgba(255, 255, 255, .75);
+  font-size: 30px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+.typewriter-animation {
+  animation:
+    typewriter 5s steps(50) 1s 1 normal both,
+    blinkingCursor 400ms steps(50) normal;
+}
+
+@keyframes typewriter {
   from {
-    opacity: 0;
+    width: 0;
   }
+
   to {
-    opacity: 1;
+    width: 100%;
   }
 }
+
+@keyframes blinkingCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, .75);
+  }
+
+  to {
+    border-right-color: transparent;
+  }
+}
+
 
 /*about*/
 
@@ -82,9 +113,82 @@ img.about1 {
 
 .thanks {
   main {
-    background: $green1;
+    background: v.$green1;
   }
 }
+
+/*custom post*/
+
+#sidebar-nav {
+  position: sticky;
+  top: 100px;
+  background: transparent;
+
+  .nav-pills {
+    a.nav-link {
+      color: v.$gray1 !important;
+
+      ul {
+        a.nav-link {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show>.nav-link {
+    background: transparent;
+    color: v.$blue3 !important;
+  }
+
+}
+
+.blog-title {
+  margin-bottom:60px {}
+
+  @include v.mq(lg) {
+    margin-bottom: 100px;
+  }
+}
+
+.blog-cat {
+  color: v.$blue3;
+
+  a {
+    color: v.$blue3;
+  }
+}
+
+.target-div {
+  scroll-margin-top: 100px;
+
+  div {
+    h4 {
+      scroll-margin-top: 100px;
+    }
+
+    ol,
+    ul {
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      @include v.mq(lg) {
+        padding-left: 2rem !important;
+      }
+    }
+
+    >div,
+    >p {
+      @include v.mq(lg) {
+        padding-left: 1.5rem !important;
+      }
+    }
+  }
+
+}
+
 
 /*notfound*/
 
@@ -96,7 +200,7 @@ img.about1 {
       display: block;
       font-size: 140px;
 
-      @include mq(md) {
+      @include v.mq(md) {
         font-size: 180px;
       }
     }

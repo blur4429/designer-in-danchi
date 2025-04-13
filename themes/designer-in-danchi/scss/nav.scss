@@ -1,4 +1,7 @@
-/*nav*/
+/*
+*nav*
+*/
+@use 'variables' as v;
 
 header {
   z-index: 10;
@@ -10,13 +13,13 @@ header {
       display: block;
       font-style: italic;
       font-size: 0.5em;
-      color: $gray1;
+      color: v.$blue3;
     }
   }
 }
 
 nav a:hover {
-  color: $blue3;
+  color: v.$blue3;
 }
 
 .button_container {
@@ -30,28 +33,28 @@ nav a:hover {
   transition: opacity 0.25s ease;
 
   &:hover {
-    color: $blue1;
+    color: v.$blue1;
   }
 
   &.active {
     .top {
-      background: $shiro;
+      background: v.$shiro;
       transform: translateY(11px) translateX(0) rotate(45deg);
     }
 
     .middle {
       opacity: 0;
-      background: $shiro;
+      background: v.$shiro;
     }
 
     .bottom {
-      background: $shiro;
+      background: v.$shiro;
       transform: translateY(-11px) translateX(0) rotate(-45deg);
     }
   }
 
   span {
-    background: $black1;
+    background: v.$blue3;
     border: none;
     height: 3px;
     width: 100%;
@@ -73,7 +76,7 @@ nav a:hover {
 
 .overlay {
   position: fixed;
-  background: $pink1;
+  background: v.$blue2;
   top: 0;
   left: 0;
   width: 100%;
@@ -138,7 +141,7 @@ nav a:hover {
       a {
         display: block;
         position: relative;
-        color: $shiro;
+        color: v.$shiro;
         text-decoration: none;
         overflow: hidden;
 
@@ -156,7 +159,7 @@ nav a:hover {
           width: 0%;
           transform: translateX(-50%);
           height: 3px;
-          background: $shiro;
+          background: v.$shiro;
           transition: 0.35s;
         }
       }
@@ -176,32 +179,41 @@ nav a:hover {
   }
 }
 
+.border-blue {
+  border-bottom: 1px solid v.$blue3;
+}
+
 .bg-pink {
-  background: $pink1;
+  background: v.$pink1;
 }
 
 .bg-blue {
-  background: $blue2;
+  background: v.$blue2;
 }
 
 .bg-green {
-  background: $green1;
+  background: v.$green1;
 }
 
 .bg-blue3 {
-  background: $blue4;
+  background: v.$blue4;
 }
 
 /*ページ内リンク位置調整*/
 #profile {
   padding-top: 120px;
-  margin-top: -120px; /* ヘッダーの高さ分上にmarginで戻す */
-}
-
-li {
-  list-style-type: none;
+  margin-top: -120px;
+  /* ヘッダーの高さ分上にmarginで戻す */
 }
 
 .pagetitle {
   padding-top: 80px;
+}
+
+/*page title*/
+#fade-title {
+  transition: opacity 0.5s ease-in-out;
+  /* 2秒かけてフェードアウト */
+  opacity: 1;
+  /* 初期状態は表示 */
 }
