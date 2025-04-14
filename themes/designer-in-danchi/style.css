@@ -179,7 +179,7 @@ nav a:hover {
 }
 .overlay ul {
   list-style: none;
-  padding: 0;
+  padding: 0 !important;
   margin: 0 auto;
   display: inline-block;
   position: relative;
