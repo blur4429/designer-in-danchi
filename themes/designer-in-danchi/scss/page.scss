@@ -16,6 +16,11 @@
     background-size: cover;
   }
 
+  @include v.mq(xxl) {
+    background: url(img/topimg.jpg) no-repeat 0 20%;
+    background-size: cover;
+  }
+
   h1 {
     color: v.$blue3;
 
