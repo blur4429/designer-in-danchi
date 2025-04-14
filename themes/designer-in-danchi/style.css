@@ -275,6 +275,12 @@ nav a:hover {
     background-size: cover;
   }
 }
+@media screen and (min-width: 1400px) {
+  #top {
+    background: url(img/topimg.jpg) no-repeat 0 20%;
+    background-size: cover;
+  }
+}
 #top h1 {
   color: #1793b6;
 }
