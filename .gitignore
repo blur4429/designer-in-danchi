@@ -49,4 +49,6 @@ wp-config.php
 cache/
 plugins/
 w3tc-config/
-echo ".DS_Store" >> .gitignore
+
+# macOS Finder
+.DS_Store

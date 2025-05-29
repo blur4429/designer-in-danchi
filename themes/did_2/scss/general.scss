@@ -1,0 +1,92 @@
+/*
+*general*
+*/
+@use 'variables' as v;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+  background: v.$beige;
+}
+
+section {
+  display: block;
+  margin: 100px auto !important;
+
+}
+
+main>div>h1 {
+  font-size: 80px;
+  font-weight: normal;
+
+  @include v.mq(lg) {
+    font-size: 120px;
+    padding-top: 40px;
+  }
+}
+
+h4 {
+  margin: 2rem 0 !important;
+}
+
+h5 {
+  margin: 0.5rem 0 !important;
+}
+
+ul,
+ol {
+  padding-left: 1rem !important;
+
+  ul,
+  ol {
+    padding-left: 0 !important;
+  }
+}
+
+ul {
+  li {
+    list-style-type: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: v.$black1;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+/*footer*/
+
+footer {
+  background: v.$beige;
+
+  #page-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+  }
+
+  #page-top.show {
+    opacity: 1;
+  }
+
+  #page-top a {
+    display: block;
+  }
+
+  #page-top img {
+    width: 40px;
+    height: 40px;
+  }
+}

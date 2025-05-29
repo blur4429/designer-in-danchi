@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+// style.scss
+@use 'variables' as v;
+@use 'general';
+@use 'nav';
+@use 'onscroll';
+@use 'onscroll_splitting';
+@use 'page';
+@use 'splide';
+@use 'smallparts';
+@use 'btn';
+@use 'form';
+@use 'utility';
+@use 'reset';

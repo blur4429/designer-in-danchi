@@ -49,10 +49,11 @@
 
 #page-top {
   position: fixed;
-  bottom: 5px;
-  right: 20px;
+  bottom: 1em;
+  right: 1em;
   line-height: 1;
   z-index: 99;
+  opacity: .6;
 
   a {
     text-decoration: none;

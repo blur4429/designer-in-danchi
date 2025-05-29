@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_レイヤー_1" data-name="レイヤー 1" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M12.5,16c.4,0,.7-.3.7-.7V7.1l3,3c.3.3.7.3,1,0s.3-.7,0-1l-4.3-4.3c-.3-.3-.7-.3-1,0,0,0,0,0,0,0l-4.3,4.3c-.3.3-.3.7,0,1s.7.3,1,0l3-3v8.2c0,.4.3.7.7.7M2.6,19.6c0-.4.3-.7.7-.7h18.4c.4,0,.7.3.7.7s-.3.7-.7.7H3.3c-.4,0-.7-.3-.7-.7"/>
+</svg>

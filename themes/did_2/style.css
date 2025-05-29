@@ -1,0 +1,1579 @@
+@charset "UTF-8";
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+@import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=Ephesis&family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&display=swap");
+/* 
+* utility *
+*/
+@import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=Ephesis&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text: #333;
+  --color-bg: #fefbf6;
+  --color-link: #fff;
+  --color-link-hover: #fff;
+  --page-padding: 1.5rem 2rem;
+  font-size: 16px;
+}
+
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+/*
+*general*
+*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  animation: fadeIn 1s ease forwards;
+  opacity: 0;
+  background: #f0eded;
+}
+
+section {
+  display: block;
+  margin: 100px auto !important;
+}
+
+main > div > h1 {
+  font-size: 80px;
+  font-weight: normal;
+}
+@media screen and (min-width: 992px) {
+  main > div > h1 {
+    font-size: 120px;
+    padding-top: 40px;
+  }
+}
+
+h4 {
+  margin: 2rem 0 !important;
+}
+
+h5 {
+  margin: 0.5rem 0 !important;
+}
+
+ul,
+ol {
+  padding-left: 1rem !important;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  padding-left: 0 !important;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+a:hover {
+  opacity: 0.8;
+}
+
+/*footer*/
+footer {
+  background: #f0eded;
+}
+footer #page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 10;
+}
+footer #page-top.show {
+  opacity: 1;
+}
+footer #page-top a {
+  display: block;
+}
+footer #page-top img {
+  width: 40px;
+  height: 40px;
+}
+
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+/*
+*nav*
+*/
+header {
+  z-index: 10;
+}
+
+.toplogo {
+  /* ロゴマーク フェードトランジション */
+}
+.toplogo img {
+  display: inline-block;
+  height: 40px;
+  margin-right: 10px;
+}
+.toplogo .fade-title {
+  transition: opacity 0.5s ease-in-out;
+  /* 例：0.5秒かけてふわっと */
+}
+.toplogo .logomark {
+  transition: opacity 2s ease-in-out;
+}
+.toplogo span {
+  /*テキスト*/
+  color: #333333;
+}
+.toplogo span span {
+  display: block;
+  font-style: italic;
+  font-size: 0.5em;
+}
+
+/*nav pc*/
+nav a:hover {
+  color: #ff70c4;
+}
+
+.active-page {
+  border-bottom: 1px solid #333333;
+}
+
+/*nav sp*/
+.button_container {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  height: 27px;
+  width: 32px;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+}
+.button_container.active .top {
+  background: #fff;
+  transform: translateY(11px) translateX(0) rotate(45deg);
+}
+.button_container.active .middle {
+  opacity: 0;
+  background: #fff;
+}
+.button_container.active .bottom {
+  background: #fff;
+  transform: translateY(-11px) translateX(0) rotate(-45deg);
+}
+.button_container span {
+  background: #333333;
+  border: none;
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.button_container span:nth-of-type(2) {
+  top: 11px;
+}
+.button_container span:nth-of-type(3) {
+  top: 22px;
+}
+
+.overlay {
+  position: fixed;
+  background: #ff70c4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+}
+.overlay.open {
+  opacity: 0.95;
+  visibility: visible;
+  height: 100%;
+}
+.overlay.open li {
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
+}
+.overlay.open li:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+.overlay.open li:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+.overlay.open li:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+.overlay.open li a > img {
+  max-width: 70vw;
+  filter: invert(1);
+}
+.overlay nav {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  font-weight: 400;
+  text-align: center;
+}
+.overlay ul {
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.overlay ul li {
+  display: block;
+  height: 25%;
+  height: 25%;
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+.overlay ul li a {
+  display: block;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  overflow: hidden;
+}
+.overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+  width: 100%;
+}
+.overlay ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  transform: translateX(-50%);
+  height: 3px;
+  background: #fff;
+  transition: 0.35s;
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+.border-pink {
+  border-bottom: 1px solid #ff70c4;
+}
+
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+/*test.d73f7ad5.css
+* for top page *
+*/
+main.onscroll {
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: area-normal, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+.pin-spacer {
+  overflow-x: hidden;
+}
+
+/*
+.frame {
+    color: var(--color-title);
+    padding: var(--page-padding);
+    grid-gap: .5rem;
+    grid-template: "title" "prev" "demos" "sponsor" /1fr;
+    justify-content: start;
+    place-items: start end;
+    margin-bottom: 3rem;
+    font-size: 14px;
+    font-weight: 600;
+    display: grid;
+
+    a:not(.frame__title-back) {
+        white-space: nowrap;
+        position: relative;
+        overflow: hidden;
+    }
+}
+
+.line {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+.frame a:not(.frame__title-back):before,
+.line:before {
+    content: "";
+    transform-origin: 0%;
+    background: currentColor;
+    width: 100%;
+    height: 1px;
+    transition: transform .3s;
+    position: absolute;
+    top: 90%;
+}
+
+.frame a:not(.frame__title-back):hover:before,
+.line:hover:before {
+    transform-origin: 100%;
+    transform: scaleX(0);
+}
+
+.frame__title {
+    grid-area: title;
+    align-items: center;
+    display: flex;
+}
+
+.frame__title-main {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.frame__title-back {
+    align-items: flex-end;
+    display: flex;
+    position: relative;
+
+    svg {
+        fill: currentColor;
+    }
+}
+
+
+.frame__prev {
+    grid-area: prev;
+    align-self: start;
+}
+
+.frame__demos {
+    gap: 1rem;
+    display: flex;
+
+    span {
+        opacity: 0.7;
+    }
+}
+*/
+.intro {
+  height: 100vh;
+  display: grid;
+}
+.intro .container > div {
+  background: url(./img/danchi.png) no-repeat center bottom;
+  background-size: cover;
+  filter: brightness(0.9);
+}
+.intro .container p {
+  color: #ff70c4;
+}
+@media (orientation: landscape) and (max-height: 767px) {
+  .intro .container {
+    padding: 2rem 0;
+  }
+}
+.intro .title {
+  position: absolute;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 1rem;
+  background-size: 100% auto;
+  background-position: center top;
+  animation: slideIn 0.5s forwards 0.3s;
+  opacity: 0;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*sp 縦*/
+@media (max-width: 767px) and (orientation: portrait) {
+  .title {
+    background: url(./img/title_sp.svg) no-repeat;
+  }
+}
+/*sp 　横*/
+@media (orientation: landscape) and (max-height: 767px) {
+  .title {
+    background: url(./img/title_pc.svg) no-repeat;
+  }
+}
+/*tablet　縦*/
+@media (min-width: 768px) and (max-width: 1365px) and (orientation: portrait) {
+  .title {
+    background: url(./img/title_sp.svg) no-repeat;
+  }
+}
+/*tablet　横*/
+@media (orientation: landscape) and (min-width: 768px) {
+  .title {
+    background: url(./img/title_pc.svg) no-repeat;
+  }
+}
+/*pc*/
+@media (min-width: 1366px) and (orientation: portrait) {
+  .title {
+    background: url(./img/title_pc.svg) no-repeat;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .title {
+    background: url(./img/title_pc.svg) no-repeat;
+  }
+}
+.intro__title-sub {
+  font-size: clamp(1.5rem, 2vw, 2.75rem);
+  animation-name: slidein-x;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+}
+
+/*sp 　横むき高さ344*/
+@media (orientation: landscape) and (max-height: 375px) {
+  .intro__title-sub {
+    text-align: right;
+  }
+}
+@keyframes slidein-x {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.intro__info {
+  position: absolute;
+  bottom: 0;
+  right: 1rem;
+  max-width: 20ch;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  font-size: 1.1em;
+  line-height: 1.2;
+}
+.intro__info > span {
+  display: inline-block;
+  transform: rotate(90deg);
+  text-shadow: 1px 1px 0 #fff;
+}
+.intro__info:after {
+  content: "";
+  background: #333333;
+  width: 1px;
+  height: 2rem;
+  position: absolute;
+  top: 100%;
+  left: 45%;
+  animation: scrollDown 2s ease infinite;
+}
+
+@media screen and (min-width: 992px) {
+  .intro__info {
+    right: 2rem;
+  }
+}
+@keyframes scrollDown {
+  0% {
+    transform-origin: top;
+    transform: scaleY(0);
+  }
+  45% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+  55% {
+    transform-origin: bottom;
+    transform: scaleY(1);
+  }
+  100% {
+    transform-origin: bottom;
+    transform: scaleY(0);
+  }
+}
+.content {
+  width: 100vw;
+  padding: var(--page-padding);
+  flex-direction: column;
+  display: flex;
+  position: relative;
+}
+
+.content--full {
+  padding: 0;
+}
+
+.content p {
+  max-width: 660px;
+  margin: 0 auto 0.5rem auto;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.content--highlight p {
+  font-size: clamp(1rem, 3vw, 2rem);
+}
+
+.content__title {
+  counter-increment: section;
+  gap: 2rem;
+  font-size: 12vw;
+  line-height: 0.8;
+  display: grid;
+}
+
+.content__title.small {
+  font-size: 6vw !important;
+}
+
+.content__title--left {
+  text-align: left;
+}
+
+.content__title--right {
+  text-align: right;
+}
+
+@media screen and (max-width: 1200px) {
+  .content__title {
+    /*skills*/
+    /*job*/
+  }
+  .content__title[data-effect27] .font-upper {
+    font-size: 0.8em;
+  }
+  .content__title[data-effect29] .cal-sans {
+    font-size: 1.2em;
+  }
+}
+.content__title--sides {
+  text-align: left;
+  grid-template-rows: auto auto;
+  grid-template-columns: 100%;
+  gap: 2rem;
+  display: grid;
+}
+.content__title--sides span:last-child {
+  justify-self: end;
+}
+
+.font-height {
+  line-height: 1.4;
+}
+
+.font-height-medium {
+  line-height: 0.9;
+}
+
+.font-medium {
+  margin-top: 3rem;
+  font-size: 11vw;
+}
+
+@media screen and (min-width: 992px) {
+  .font-medium {
+    font-size: 6vw;
+  }
+}
+.font-sub {
+  margin-top: 2rem;
+  font-size: 5vw;
+  display: block;
+}
+
+.splitting .font-sub .word {
+  grid-auto-flow: column;
+  display: grid;
+}
+
+.char-wrap {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+@media screen and (width >= 53em) {
+  .frame {
+    grid-gap: 2rem;
+    grid-template: "title prev demos sponsor"/auto auto 1fr auto;
+    justify-items: start;
+  }
+  .frame__demos {
+    justify-self: end;
+  }
+}
+.fixed-bg {
+  min-height: 50vh;
+  background: url(./img/night.jpg) no-repeat center bottom;
+  background-size: auto 100%;
+  background-attachment: fixed;
+}
+
+@media screen and (min-width: 992px) {
+  .fixed-bg {
+    background-size: 100% auto;
+  }
+}
+/*index2.4942c82c.css*/
+.splitting .word,
+.splitting .char {
+  display: inline-block;
+}
+
+.splitting .char {
+  position: relative;
+}
+
+.splitting .char:before,
+.splitting .char:after {
+  content: attr(data-char);
+  visibility: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.splitting {
+  --word-center: calc((var(--word-total) - 1)/2);
+  --char-center: calc((var(--char-total) - 1)/2);
+  --line-center: calc((var(--line-total) - 1)/2) ;
+}
+
+.splitting .word {
+  --word-percent: calc(var(--word-index)/var(--word-total));
+  --line-percent: calc(var(--line-index)/var(--line-total)) ;
+}
+
+.splitting .char {
+  --char-percent: calc(var(--char-index)/var(--char-total));
+  --char-offset: calc(var(--char-index) - var(--char-center));
+  --distance: calc((var(--char-offset)*var(--char-offset))/var(--char-center));
+  --distance-sine: calc(var(--char-offset)/var(--char-center));
+  --distance-percent: calc((var(--distance)/var(--char-center))) ;
+}
+
+.splitting.cells img {
+  width: 100%;
+  display: block;
+}
+
+@supports (display: grid) {
+  .splitting.cells {
+    visibility: hidden;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+  }
+  .splitting .cell-grid {
+    background: inherit;
+    grid-template: repeat(var(--row-total), 1fr)/repeat(var(--col-total), 1fr);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .splitting .cell {
+    background: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+  .splitting .cell-inner {
+    background: inherit;
+    visibility: visible;
+    width: calc(100% * var(--col-total));
+    height: calc(100% * var(--row-total));
+    left: calc(-100% * var(--col-index));
+    top: calc(-100% * var(--row-index));
+    position: absolute;
+  }
+  .splitting .cell {
+    --center-x: calc((var(--col-total) - 1)/2);
+    --center-y: calc((var(--row-total) - 1)/2);
+    --offset-x: calc(var(--col-index) - var(--center-x));
+    --offset-y: calc(var(--row-index) - var(--center-y));
+    --distance-x: calc((var(--offset-x)*var(--offset-x))/var(--center-x));
+    --distance-y: calc((var(--offset-y)*var(--offset-y))/var(--center-y)) ;
+  }
+}
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+/* 
+*pages*
+ */
+.pagetitle {
+  text-align: center;
+  padding-top: 80px;
+}
+.pagetitle li.col > a.me-1 {
+  position: relative;
+  /* 擬似要素の基準位置にするため */
+  padding-right: 1.5em;
+  /* アイコン分の右側の余白を確保 */
+}
+.pagetitle li.col > a.me-1::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-image: url("./icons/chevron-down.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+/*contact*/
+.post-password-form {
+  /* フォーム全体のスタイル */
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.post-password-form p {
+  max-width: 480px;
+  margin: 0 auto 20px auto;
+}
+
+.post-password-form label {
+  /* ラベルのスタイル */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.post-password-form input[type=password] {
+  /* パスワード入力欄のスタイル */
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.post-password-form input[type=submit] {
+  padding: 5px 10px;
+  background-color: #1793b6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/*custom post*/
+#sidebar-nav {
+  position: sticky;
+  top: 100px;
+  background: transparent;
+}
+#sidebar-nav .nav-pills a.nav-link {
+  color: #666 !important;
+}
+#sidebar-nav .nav-pills a.nav-link ul a.nav-link {
+  margin: 0;
+}
+#sidebar-nav .nav-pills .nav-link.active,
+#sidebar-nav .nav-pills .show > .nav-link {
+  background: transparent;
+  color: #ff70c4 !important;
+}
+
+.blog-title {
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 992px) {
+  .blog-title {
+    margin-bottom: 100px;
+  }
+}
+
+.blog-cat {
+  color: #ff70c4;
+}
+.blog-cat a {
+  color: #ff70c4;
+}
+
+.target-div {
+  scroll-margin-top: 100px;
+}
+.target-div div h4 {
+  scroll-margin-top: 100px;
+}
+.target-div div ol li,
+.target-div div ul li {
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 992px) {
+  .target-div div ol,
+  .target-div div ul {
+    padding-left: 2rem !important;
+  }
+}
+@media screen and (min-width: 992px) {
+  .target-div div > div,
+  .target-div div > p {
+    padding-left: 1.5rem !important;
+  }
+}
+
+/*notfound*/
+.notfound h1 {
+  font-size: 40px;
+}
+.notfound h1 span {
+  display: block;
+  font-size: 140px;
+}
+@media screen and (min-width: 768px) {
+  .notfound h1 span {
+    font-size: 180px;
+  }
+}
+
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+/*
+*splide.js carousel*
+*/
+.splide__list {
+  border-radius: 5px 5px 5px 5px;
+  background: #fff;
+  margin: 0 0.5em;
+}
+.splide__list .splide__slide img {
+  filter: grayscale(1);
+}
+.splide__list .splide__slide img:hover {
+  filter: none;
+}
+
+.splide__arrow {
+  background: transparent;
+}
+
+.splide__arrow svg {
+  fill: #ccc;
+}
+
+.splide__pagination__page.is-active {
+  background: #ff70c4;
+}
+
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+/*
+*smallparts*
+*/
+/*breadcrumb*/
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  padding: 0 0.5em;
+  color: #666;
+  font-size: 0.9em;
+}
+.breadcrumb .sl:after {
+  content: "/";
+  padding: 0 0.5em;
+}
+.breadcrumb a:hover {
+  color: #ff70c4;
+}
+
+/*category*/
+.category li {
+  padding: 0.5em;
+  width: auto;
+}
+@media screen and (min-width: 992px) {
+  .category li li {
+    padding: 0.5em 1em;
+  }
+}
+.category li a:hover {
+  color: #ff70c4;
+}
+
+/*scroll to top*/
+#page-top {
+  position: fixed;
+  bottom: 5px;
+  right: 20px;
+  line-height: 1;
+  z-index: 99;
+}
+#page-top a {
+  text-decoration: none;
+  display: block;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+#page-top a:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+:not(pre) > code[class*=language-],
+pre[class*=language-] {
+  background: #f8f9fa !important;
+}
+
+.token.class-name,
+.token.function {
+  color: #ff70c4 !important;
+}
+
+.code-block {
+  position: relative;
+  font-size: 15px;
+}
+.code-block pre,
+.code-block code {
+  margin: 0;
+  white-space: pre-line;
+  font-family: "Noto Sans JP", monospace;
+  line-height: 1.5;
+}
+.code-block pre code[data-language]::before {
+  content: attr(data-language);
+  display: block;
+  padding: 5px 10px;
+  background-color: #aeaeae;
+  border-radius: 0 0 3px 3px;
+  font-size: 0.8em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-shadow: none;
+  color: #fff;
+  border-bottom: 0.5px solid #ccc;
+}
+.code-block code {
+  position: relative;
+  display: inline-block;
+  padding-top: 1em;
+}
+.code-block pre {
+  padding: 0 0.5em 0.5em 0.5em !important;
+  tab-size: 2;
+}
+@media screen and (min-width: 768px) {
+  .code-block pre {
+    padding: 0 1em 1em 1.5em !important;
+  }
+}
+.code-block .token.cdata,
+.code-block .token.comment,
+.code-block .token.doctype,
+.code-block .token.prolog {
+  font-style: italic !important;
+  color: #aeaeae !important;
+}
+
+.copy-button {
+  position: absolute;
+  /* 絶対位置指定 */
+  top: 5px;
+  right: 5px;
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 14px;
+  background: transparent;
+  color: #aeaeae;
+}
+
+/*list-group*/
+ul.bullet-list {
+  padding-left: 1.5em !important;
+}
+ul.bullet-list li {
+  list-style-type: disc;
+}
+
+/*postnav*/
+.postnav {
+  margin-top: 60px;
+}
+@media screen and (min-width: 992px) {
+  .postnav {
+    margin-top: 100px;
+  }
+}
+
+/*other*/
+.icons {
+  width: 15px;
+  opacity: 0.6;
+}
+
+.modal-content,
+.modal-dialog,
+.card {
+  border: none;
+}
+
+/* js-slide-in　下からスライドイン */
+.slidein {
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: all 1s;
+}
+.slidein.slidein-left {
+  transform: translate(-100%, 0);
+}
+.slidein.slidein-right {
+  transform: translate(100%, 0);
+}
+.slidein.slidein-up {
+  transform: translate(0, -100%);
+}
+.slidein.slidein-bottom {
+  transform: translate(0, 80px);
+}
+.slidein.scrollin {
+  transform: translate(0, 0) !important;
+  opacity: 1 !important;
+}
+
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+/*
+*btn*
+*/
+/*to外部ボタン*/
+.btn {
+  position: relative;
+  min-height: 40px;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  z-index: 2;
+  overflow: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.btn:hover {
+  border: 1px solid #333333;
+}
+.btn::before {
+  position: absolute;
+  right: 1em;
+  top: 35%;
+  content: "";
+  width: 16px;
+  height: 16px;
+  transition: right 0.3s;
+}
+.btn::before {
+  bottom: 0;
+  content: "";
+  height: 16px;
+  width: 16px;
+  margin: auto;
+  position: absolute;
+  right: 2em;
+  top: 0;
+  transition: right 0.3s;
+}
+.btn:hover::before {
+  right: 25px;
+}
+
+.btn-ob::before {
+  background-image: url(icons/box-arrow-up-right.svg);
+}
+
+.btn-modal::before {
+  background-image: url(icons/window-plus.svg);
+}
+
+/*to内部ボタン*/
+.btn-l {
+  position: relative;
+  min-height: 50px;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  z-index: 2;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.btn-l::before {
+  bottom: 0;
+  content: "";
+  height: 16px;
+  width: 16px;
+  margin: auto;
+  position: absolute;
+  right: 2em;
+  top: 0;
+  transition: right 0.3s;
+}
+.btn-l:hover {
+  background: #ff70c4;
+  color: #fff;
+}
+.btn-l:hover::before {
+  right: 25px;
+}
+.btn-l.btn-right::before {
+  background-image: url(icons/chevron-right.svg);
+  background-size: 16px 16px;
+}
+.btn-l.btn-right:hover::before {
+  background-image: url(icons/chevron-right_w.svg);
+  background-size: 16px 16px;
+}
+.btn-l.btn-form::before {
+  background-image: url(icons/send.svg);
+  background-size: 16px 16px;
+}
+.btn-l.btn-form:hover::before {
+  background-image: url(icons/send_w.svg);
+  background-size: 16px 16px;
+}
+
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+/*
+*form*
+*/
+form {
+  /*button > btn.scss*/
+}
+form label span {
+  color: #ff70c4;
+}
+form input::placeholder,
+form textarea::placeholder {
+  color: #ccc;
+}
+form textarea {
+  resize: vertical !important;
+  min-height: 180px;
+}
+
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+/*visiblity*/
+@media screen and (max-width: 576px) {
+  .sm-hide {
+    display: none !important;
+  }
+  .sm-show {
+    display: block !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .md-hide {
+    display: none !important;
+  }
+  .md-show {
+    display: block !important;
+  }
+}
+.lg-hide {
+  display: block !important;
+}
+
+.lg-show {
+  display: none !important;
+}
+
+@media screen and (min-width: 992px) {
+  .lg-hide {
+    display: none !important;
+  }
+  .lg-show {
+    display: block !important;
+  }
+}
+/*fonts*/
+.ephesis {
+  font-family: "Ephesis", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cal-sans {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poltawski {
+  font-family: "Poltawski Nowy", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.poppins.light {
+  font-weight: 300;
+}
+.poppins.reg {
+  font-weight: 400;
+}
+.poppins.med {
+  font-weight: 500;
+}
+.poppins.s-bold {
+  font-weight: 600;
+}
+
+/*font-size*/
+.x-small {
+  font-size: 0.8em;
+}
+
+.smaller {
+  font-size: 0.9em;
+}
+
+.larger {
+  font-size: 1.2em;
+}
+
+.gray2 {
+  color: #aeaeae;
+}
+
+/*line-height*/
+.lh-s {
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.09em;
+}
+
+.lh {
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0.09em;
+}
+
+.ti {
+  text-indent: -1em;
+  padding: 0 0 0 1em;
+}
+
+/*img*/
+.g-scale img {
+  filter: grayscale(1);
+}
+.g-scale img:hover {
+  filter: grayscale(0);
+}
+
+/*margin*/
+.my-100 {
+  margin: 100px 0 !important;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+/*cssのリセット*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+  outline: 0;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+ins {
+  text-decoration: none;
+  color: #000;
+  background-color: #ff9;
+}
+
+mark {
+  font-weight: bold;
+  font-style: italic;
+  color: #000;
+  background-color: #ff9;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 1em 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+/*サイト全体の基準となるCSSを記述*/
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  /*フォントの指定*/
+  line-height: 1.4;
+  /*行間の指定*/
+  margin: 0;
+  padding: 0;
+  color: #333;
+  /*サイトのデフォルトとなる文字の色を指定*/
+}
+
+/*見出しを全て太字で表示 + 文字色を黒に*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  color: #000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

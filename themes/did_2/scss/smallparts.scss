@@ -1,0 +1,205 @@
+/*
+*smallparts*
+*/
+@use 'variables' as v;
+
+/*breadcrumb*/
+
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  padding: 0 0.5em;
+  color: v.$gray1;
+  font-size: .9em;
+
+  .sl {
+    &:after {
+      content: '/';
+      padding: 0 0.5em;
+    }
+  }
+
+  a:hover {
+    color: v.$pink1;
+  }
+}
+
+/*category*/
+
+.category {
+  li {
+    padding: 0.5em;
+    width: auto;
+
+    @include v.mq(lg) {
+      li {
+        padding: 0.5em 1em;
+      }
+    }
+
+    a {
+
+      &:hover {
+        color: v.$pink1;
+      }
+    }
+  }
+}
+
+/*scroll to top*/
+
+#page-top {
+  position: fixed;
+  bottom: 5px;
+  right: 20px;
+  line-height: 1;
+  z-index: 99;
+
+  a {
+    text-decoration: none;
+    display: block;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+
+    &:hover {
+      text-decoration: none;
+      opacity: 0.5;
+    }
+  }
+}
+
+//prism.js 
+
+:not(pre)>code[class*=language-],
+pre[class*=language-] {
+  background: v.$gray4 !important;
+}
+
+.token.class-name,
+.token.function {
+  color: v.$pink1 !important;
+}
+
+.code-block {
+  position: relative;
+  font-size: 15px;
+
+  pre,
+  code {
+    margin: 0;
+    white-space: pre-line;
+    font-family: "Noto Sans JP", monospace;
+    line-height: 1.5;
+  }
+
+  pre code[data-language]::before {
+    content: attr(data-language);
+    display: block;
+    padding: 5px 10px;
+    background-color: v.$gray2;
+    border-radius: 0 0 3px 3px;
+    font-size: 0.8em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: none;
+    color: v.$shiro;
+    border-bottom: 0.5px solid v.$gray3;
+  }
+
+  code {
+    position: relative;
+    display: inline-block;
+    padding-top: 1em;
+  }
+
+  pre {
+    padding: 0 0.5em 0.5em 0.5em !important;
+    tab-size: 2;
+
+    @include v.mq(md) {
+      padding: 0 1em 1em 1.5em !important;
+    }
+  }
+
+  .token.cdata,
+  .token.comment,
+  .token.doctype,
+  .token.prolog {
+    font-style: italic !important;
+    color: v.$gray2 !important;
+  }
+}
+
+.copy-button {
+  position: absolute;
+  /* 絶対位置指定 */
+  top: 5px;
+  right: 5px;
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-size: 14px;
+  background: transparent;
+  color: v.$gray2;
+}
+
+/*list-group*/
+ul.bullet-list {
+  padding-left: 1.5em !important;
+
+  li {
+    list-style-type: disc;
+  }
+}
+
+/*postnav*/
+.postnav {
+  margin-top: 60px;
+
+  @include v.mq(lg) {
+    margin-top: 100px;
+  }
+}
+
+/*other*/
+
+.icons {
+  width: 15px;
+  opacity: 0.6;
+}
+
+.modal-content,
+.modal-dialog,
+.card {
+  border: none;
+}
+
+/* js-slide-in　下からスライドイン */
+
+.slidein {
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: all 1.0s;
+
+  &.slidein-left {
+    transform: translate(-100%, 0);
+  }
+
+  &.slidein-right {
+    transform: translate(100%, 0);
+  }
+
+  &.slidein-up {
+    transform: translate(0, -100%);
+  }
+
+  &.slidein-bottom {
+    transform: translate(0, 80px);
+  }
+
+  &.scrollin {
+    transform: translate(0, 0) !important;
+    opacity: 1 !important;
+  }
+}
