@@ -24,8 +24,8 @@ nav a:hover {
 
 .button_container {
   position: fixed;
-  top: 2.5%;
-  right: 4%;
+  top: 1.2rem;
+  right: 1.2rem;
   height: 27px;
   width: 32px;
   cursor: pointer;
@@ -187,17 +187,6 @@ nav a:hover {
   background: v.$pink1;
 }
 
-.bg-blue {
-  background: v.$blue2;
-}
-
-.bg-green {
-  background: v.$green1;
-}
-
-.bg-blue3 {
-  background: v.$blue4;
-}
 
 /*ページ内リンク位置調整*/
 #profile {

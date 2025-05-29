@@ -1,0 +1,127 @@
+/*
+*btn*
+*/
+@use 'variables' as v;
+
+/*to外部ボタン*/
+
+.btn {
+  position: relative;
+  min-height: 40px;
+  border: 1px solid v.$black1;
+  border-radius: 5px;
+  z-index: 2;
+  overflow: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+
+  &:hover {
+    border: 1px solid v.$black1;
+  }
+
+  &::before {
+    position: absolute;
+    right: 1em;
+    top: 35%;
+    content: '';
+    width: 16px;
+    height: 16px;
+
+    transition: right 0.3s;
+  }
+
+  &::before {
+    bottom: 0;
+    content: '';
+    height: 16px;
+    width: 16px;
+    margin: auto;
+    position: absolute;
+    right: 2em;
+    top: 0;
+    transition: right 0.3s;
+  }
+
+  &:hover::before {
+    right: 25px;
+  }
+}
+
+
+
+.btn-ob {
+  &::before {
+    background-image: url(icons/box-arrow-up-right.svg);
+  }
+}
+
+.btn-modal {
+  &::before {
+    background-image: url(icons/window-plus.svg);
+  }
+}
+
+/*to内部ボタン*/
+
+.btn-l {
+  position: relative;
+  min-height: 50px;
+  border: 1px solid v.$black1;
+  border-radius: 5px;
+  z-index: 2;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+
+  &::before {
+    bottom: 0;
+    content: '';
+    height: 16px;
+    width: 16px;
+    margin: auto;
+    position: absolute;
+    right: 2em;
+    top: 0;
+    transition: right 0.3s;
+  }
+
+  &:hover {
+    background: v.$pink1;
+    color: v.$shiro;
+
+    &::before {
+      right: 25px;
+    }
+  }
+
+
+  &.btn-right {
+    &::before {
+      background-image: url(icons/chevron-right.svg);
+      background-size: 16px 16px;
+    }
+
+    &:hover {
+      &::before {
+        background-image: url(icons/chevron-right_w.svg);
+        background-size: 16px 16px;
+      }
+    }
+  }
+
+  &.btn-form {
+    &::before {
+      background-image: url(icons/send.svg);
+      background-size: 16px 16px;
+    }
+
+    &:hover {
+      &::before {
+        background-image: url(icons/send_w.svg);
+        background-size: 16px 16px;
+      }
+    }
+  }
+
+}

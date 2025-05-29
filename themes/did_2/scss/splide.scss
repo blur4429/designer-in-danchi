@@ -1,0 +1,36 @@
+/*
+*splide.js carousel*
+*/
+@use 'variables' as v;
+
+
+.splide__list {
+  border-radius: 5px 5px 5px 5px;
+  background: #fff;
+  margin: 0 0.5em;
+
+  .splide__slide {
+    img {
+      filter: grayscale(1);
+
+      &:hover {
+        filter: none;
+      }
+    }
+
+  }
+
+}
+
+.splide__arrow {
+  background: transparent;
+}
+
+.splide__arrow svg {
+  fill: #ccc;
+}
+
+.splide__pagination__page.is-active {
+  background: v.$pink1;
+  ;
+}

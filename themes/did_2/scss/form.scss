@@ -1,0 +1,26 @@
+/*
+*form*
+*/
+@use 'variables' as v;
+
+form {
+  label {
+    span {
+      color: v.$pink1;
+    }
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: v.$gray3;
+  }
+
+  textarea {
+    resize: vertical !important;
+    min-height: 180px;
+  }
+
+  /*button > btn.scss*/
+
+
+}

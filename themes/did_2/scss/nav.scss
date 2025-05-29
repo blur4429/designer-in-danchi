@@ -1,0 +1,209 @@
+/*
+*nav*
+*/
+@use 'variables' as v;
+
+header {
+  z-index: 10;
+}
+
+.toplogo {
+  img {
+    display: inline-block;
+    height: 40px;
+    margin-right: 10px;
+  }
+
+  .fade-title {
+    transition: opacity 0.5s ease-in-out;
+    /* 例：0.5秒かけてふわっと */
+  }
+
+  /* ロゴマーク フェードトランジション */
+  .logomark {
+    transition: opacity 2s ease-in-out;
+  }
+
+  span {
+    /*テキスト*/
+    color: v.$black1;
+
+    span {
+      display: block;
+      font-style: italic;
+      font-size: 0.5em;
+    }
+  }
+}
+
+/*nav pc*/
+
+nav a:hover {
+  color: v.$pink1;
+}
+
+.active-page {
+  border-bottom: 1px solid v.$black1;
+}
+
+/*nav sp*/
+
+.button_container {
+  position: fixed;
+  top: 1.2rem;
+  right: 1.2rem;
+  height: 27px;
+  width: 32px;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+
+  &.active {
+    .top {
+      background: v.$shiro;
+      transform: translateY(11px) translateX(0) rotate(45deg);
+    }
+
+    .middle {
+      opacity: 0;
+      background: v.$shiro;
+    }
+
+    .bottom {
+      background: v.$shiro;
+      transform: translateY(-11px) translateX(0) rotate(-45deg);
+    }
+  }
+
+  span {
+    background: v.$black1;
+    border: none;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.35s ease;
+    cursor: pointer;
+
+    &:nth-of-type(2) {
+      top: 11px;
+    }
+
+    &:nth-of-type(3) {
+      top: 22px;
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  background: v.$pink1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+
+  &.open {
+    opacity: 0.95;
+    visibility: visible;
+    height: 100%;
+
+    li {
+      animation: fadeInRight 0.5s ease forwards;
+      animation-delay: 0.35s;
+
+      &:nth-of-type(2) {
+        animation-delay: 0.4s;
+      }
+
+      &:nth-of-type(3) {
+        animation-delay: 0.45s;
+      }
+
+      &:nth-of-type(4) {
+        animation-delay: 0.5s;
+      }
+
+      a>img {
+        max-width: 70vw;
+        filter: invert(1);
+      }
+    }
+  }
+
+  nav {
+    position: relative;
+    height: 70%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  ul {
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;
+
+    li {
+      display: block;
+      height: 25%;
+      height: calc(100% / 4);
+      min-height: 50px;
+      position: relative;
+      opacity: 0;
+
+      a {
+        display: block;
+        position: relative;
+        color: v.$shiro;
+        text-decoration: none;
+        overflow: hidden;
+
+        &:hover:after,
+        &:focus:after,
+        &:active:after {
+          width: 100%;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          width: 0%;
+          transform: translateX(-50%);
+          height: 3px;
+          background: v.$shiro;
+          transition: 0.35s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+.border-pink {
+  border-bottom: 1px solid v.$pink1;
+}

@@ -17,7 +17,7 @@ $url = get_template_directory_uri();
     <section class="container">
         <div class="row row-cols-1 row-cols-lg-2 p-2 mb-5">
 
-      <?php
+            <?php
       $args_latest = [
         'post_type' => 'blog',
         'posts_per_page' => 1,
@@ -62,7 +62,7 @@ $url = get_template_directory_uri();
     <!--最新以外の投稿-->
     <section class="container pt-5">
         <div class="row" data-masonry="{&quot;percentPosition&quot;: true }">
-      <?php
+            <?php
       $args_others = [
         'post_type' => 'blog',
         'posts_per_page' => 10,
@@ -90,7 +90,7 @@ $url = get_template_directory_uri();
                 </div>
             </div>
 
-        <?php
+            <?php
         endwhile;
         wp_reset_postdata();
       endif;

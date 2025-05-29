@@ -11,6 +11,7 @@
   background: url(img/topimg.jpg) no-repeat 45% 0;
   background-size: cover;
 
+
   @include v.mq(lg) {
     background: url(img/topimg.jpg) no-repeat top center;
     background-size: cover;
@@ -37,33 +38,6 @@
   white-space: nowrap;
   overflow: hidden;
   transform: translateY(-50%);
-}
-
-/* Animation */
-.typewriter-animation {
-  animation:
-    typewriter 5s steps(50) 1s 1 normal both,
-    blinkingCursor 400ms steps(50) normal;
-}
-
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blinkingCursor {
-  from {
-    border-right-color: rgba(255, 255, 255, .75);
-  }
-
-  to {
-    border-right-color: transparent;
-  }
 }
 
 
