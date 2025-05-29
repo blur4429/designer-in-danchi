@@ -6,7 +6,7 @@
     <section class="intro align-items-center m-0 ">
         <div class="container h-75 p-xl-5">
             <!--bg-->
-            <div class="intro__title-pre h-100"></div>
+            <div class="intro__title-pre h-100 rounded-3"></div>
             <p class="intro__title-sub text-xxl-end poppins reg">&nbsp;Portfolio 2025</p>
         </div>
         <div class="title flex-column h-100"></div>
