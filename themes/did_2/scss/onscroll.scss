@@ -399,7 +399,7 @@ main.onscroll {
 .fixed-bg {
     min-height: 50vh;
     background: url(./img/night.jpg) no-repeat center bottom;
-    background-size: auto 100%;
+    background-size: cover;
     background-attachment: fixed;
     box-shadow: inset 0px 1px 5px v.$blue;
 
