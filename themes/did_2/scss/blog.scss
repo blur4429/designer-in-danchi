@@ -17,6 +17,12 @@
         color: v.$pink1;
     }
 
+    .thumb {
+        img {
+            border-radius: 5px;
+        }
+    }
+
     .blog-cat {
         color: v.$pink1;
 
@@ -72,6 +78,16 @@
         }
 
         .postrow-right {
+
+            .target-div {
+                scroll-margin-top: 50px;
+
+                div {
+                    h4 {
+                        scroll-margin-top: 50px;
+                    }
+                }
+            }
 
             h3 {
                 border-left: 8px solid v.$black1;

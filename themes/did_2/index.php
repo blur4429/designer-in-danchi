@@ -16,7 +16,7 @@
 
     <!--2　　data-effect29-->
     <section>
-        <div class="content mb-5">
+        <div class="content">
             <h2 class="content__title poppins med" data-splitting data-effect29>
                 <span>Web Design</span>
                 <span>Frontend</span>
@@ -28,11 +28,11 @@
     <!--3-->
     <section id="about" class="slidein slidein-bottom">
         <div class="content">
-            <h2 class="content__title text-center slidein-bottom mb-100"><span class="font-16">
+            <h2 class="text-center slidein-bottom mb-100"><span class="font-16">
                     <img src="<?php echo $url;?>/img/about.svg" alt="about"></span>
             </h2>
 
-            <div class="col col-lg-3  mx-auto slidein slidein-bottom mb-5">
+            <div class="col-10 col-md-6 col-lg-4 mx-auto slidein slidein-bottom mb-5 scrollin">
                 <img class="rounded-circle" src="<?php echo $url;?>/img/self.jpg" alt="self">
             </div>
 
@@ -71,7 +71,7 @@
     <!--4　　data-effect27-->
     <section>
 
-        <h2 class="content__title small text-center ">
+        <h2 class="text-center slidein slidein-bottom">
             <span><img src="<?php echo $url;?>/img/skills.svg" alt="skills"></span>
         </h2>
 

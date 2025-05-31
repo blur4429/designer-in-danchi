@@ -40,7 +40,7 @@ get_header();
                         </div>
                     </div>
                     <!--right-->
-                    <div class="col col-lg-6">
+                    <div class="col col-lg-6 thumb">
                         <?php the_post_thumbnail(); ?>
 
                     </div>

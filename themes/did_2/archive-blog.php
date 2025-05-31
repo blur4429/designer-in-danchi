@@ -43,7 +43,7 @@ $url = get_template_directory_uri();
             </div>
             <!--right-->
             <div class="col">
-                <div class="mb-3"><?php the_post_thumbnail(); ?></div>
+                <div class="thumb mb-3"><?php the_post_thumbnail(); ?></div>
             </div>
 
             <?php

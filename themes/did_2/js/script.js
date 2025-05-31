@@ -33,20 +33,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 100)
 })
 
-// Fade logomark and title on scroll
+// Fade logomark and title ＋ intro__info ..on scroll
 const fadeTitle = document.querySelector('.fade-title')
 const logomark = document.querySelector('.logomark')
+const introInfo = document.querySelector('.intro__info')
 const initialLogomarkSrc = logomark.getAttribute('src')
 const newLogomarkSrc = '/wp-content/themes/did_2/icons/logomark2.svg'
-const scrollThreshold = 100 // 変更：100px に設定
+const scrollThreshold = 100
 let isLogomarkChanged = false
 
-if (fadeTitle && logomark) {
+if (fadeTitle && logomark && introInfo) {
+  // 新しい要素も条件に追加
   window.addEventListener('scroll', () => {
     const scrollPosition = window.scrollY
 
     // fade-title の制御
     fadeTitle.style.opacity = scrollPosition > scrollThreshold ? 0 : 1
+
+    // intro__info の制御 (fade-title と同じ動き)
+    introInfo.style.opacity = scrollPosition > scrollThreshold ? 0 : 1
 
     // logomark の制御
     if (scrollPosition > scrollThreshold && !isLogomarkChanged) {
@@ -100,11 +105,7 @@ const code = document.querySelector('code')
 
 //ScrollSpy　for custom post Blog ０３２５
 document.addEventListener('DOMContentLoaded', () => {
-  // ScrollSpy の初期化
-  const scrollSpy = new bootstrap.ScrollSpy(document.body, {
-    target: '#content-scroll',
-    offset: 100 // offset オプションを調整
-  })
+  // ScrollSpy の初期化-250531削除
 
   // サイドバーのリンク要素とコンテンツセクションを取得
   const sidebarLinks = document.querySelectorAll('#sidebar-nav .nav-link')
@@ -124,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // IDが認識されるタイミングを調整
       if (window.pageYOffset >= sectionTop - 180) {
         currentSection = section.getAttribute('id')
+        console.log('Current Section ID:', currentSection) // 追加
       }
     })
 
