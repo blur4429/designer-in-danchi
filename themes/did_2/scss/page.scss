@@ -3,6 +3,8 @@
  */
 @use 'variables' as v;
 
+/*each page*/
+
 .pagetitle {
   text-align: center;
   padding-top: 80px;
@@ -71,80 +73,6 @@
   cursor: pointer;
   border-radius: 5px;
 }
-
-
-/*custom post*/
-
-#sidebar-nav {
-  position: sticky;
-  top: 100px;
-  background: transparent;
-
-  .nav-pills {
-    a.nav-link {
-      color: v.$gray1 !important;
-
-      ul {
-        a.nav-link {
-          margin: 0;
-        }
-      }
-    }
-  }
-
-  .nav-pills .nav-link.active,
-  .nav-pills .show>.nav-link {
-    background: transparent;
-    color: v.$pink1 !important;
-  }
-
-}
-
-.blog-title {
-  margin-bottom:60px {}
-
-  @include v.mq(lg) {
-    margin-bottom: 100px;
-  }
-}
-
-.blog-cat {
-  color: v.$pink1;
-
-  a {
-    color: v.$pink1;
-  }
-}
-
-.target-div {
-  scroll-margin-top: 100px;
-
-  div {
-    h4 {
-      scroll-margin-top: 100px;
-    }
-
-    ol,
-    ul {
-      li {
-        margin-bottom: 0.5rem;
-      }
-
-      @include v.mq(lg) {
-        padding-left: 2rem !important;
-      }
-    }
-
-    >div,
-    >p {
-      @include v.mq(lg) {
-        padding-left: 1.5rem !important;
-      }
-    }
-  }
-
-}
-
 
 /*notfound*/
 

@@ -14,7 +14,7 @@
         <span class="intro__info poppins s-bold"><span>Scroll</span></span>
     </section>
 
-    <!--2-->
+    <!--2　　data-effect29-->
     <section>
         <div class="content mb-5">
             <h2 class="content__title poppins med" data-splitting data-effect29>
@@ -28,9 +28,9 @@
     <!--3-->
     <section id="about" class="slidein slidein-bottom">
         <div class="content">
-            <h3 class="content__title small text-center slidein-bottom mb-100"><span class="font-16">
+            <h2 class="content__title text-center slidein-bottom mb-100"><span class="font-16">
                     <img src="<?php echo $url;?>/img/about.svg" alt="about"></span>
-            </h3>
+            </h2>
 
             <div class="col col-lg-3  mx-auto slidein slidein-bottom mb-5">
                 <img class="rounded-circle" src="<?php echo $url;?>/img/self.jpg" alt="self">
@@ -38,11 +38,12 @@
 
 
             <div>
-                <p class="font-small mb-2">
-                    神奈川県出身、東京のとある団地に住むデザイナーです。<br>長らく事務系派遣に従事するもリーマンショックを機に一念発起しWebデザイナーに転身、2024年にお世話になった企業からフリーのWebデザイナーとして巣立ちました。
-                </p>
+                <h3 class="font-small mb-2">
+                    神奈川県出身、東京のとある団地に住むデザイナーです。</h3>
 
                 <p class="font-small mb-2">
+                    長らく事務系派遣に従事するもリーマンショックを機に一念発起しWebデザイナーに転身、
+                    2024年にお世話になった企業からフリーのWebデザイナーとして巣立ちました。
                     シンプルなデザインが好きですが、仕事以外に暮らしぶりにもそれを反映させています。新しいものを買う前にありモノを工夫して使う、作れるものは自分で作るなど、最小のリソースでいかに心地よくすてきに暮らすかを考え、実践することを楽しんでいます。
                 </p>
 
@@ -67,10 +68,10 @@
     <!--fixed-bg-->
     <div class="container-fluid fixed-bg my-100"></div>
 
-    <!--4-->
+    <!--4　　data-effect27-->
     <section>
 
-        <h2 class="content__title small text-center " data-splitting data-effect21>
+        <h2 class="content__title small text-center ">
             <span><img src="<?php echo $url;?>/img/skills.svg" alt="skills"></span>
         </h2>
 

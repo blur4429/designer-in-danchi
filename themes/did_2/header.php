@@ -87,37 +87,31 @@ switch ($page_id) {
 ?>
 
 <body class="fadein">
-
-    <header class="position-fixed w-100 p-3 <?php echo $page_title; ?>">
-        <div class="d-flex flex-wrap px-lg-4">
-            <a href="/" class="toplogo d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none ">
-                <img class="logomark" src="<?php echo esc_url(get_template_directory_uri()); ?>/icons/logomark.svg"
-                    alt="logomark">
-                <div class="fade-title">
-                    <span class="fs-4 fw-bold">団地のDesigner<br><span class="fw-light <?php echo $catch; ?>">Portfolio
-                            Site</span></span>
+    <header class="fixed-top pt-2 px-xl-3 <?php echo $page_title; ?>">
+        <nav class="navbar">
+            <div class="container-fluid position-relative">
+                <a href="/" class="toplogo d-flex align-items-center text-decoration-none ">
+                    <img class="logomark" src="<?php echo $url;?>/icons/logomark.svg" alt="logomark">
+                    <div class="fade-title">
+                        <span class="fs-4 poppins mid">団地のDesigner<br><span
+                                class="fw-light &lt;?php echo $catch; ?&gt;">Portfolio
+                                Site</span></span>
+                    </div>
+                </a>
+                <div class="button_container" id="toggle">
+                    <span class="top"></span>
+                    <span class="middle"></span>
+                    <span class="bottom"></span>
                 </div>
-            </a>
-
-            <!--show lg-->
-            <nav class="lg-menu lg-show d-flex align-items-center py-3">
-                <a class="text-decoration-none pb-2 me-3 <?php echo $page_class_top; ?> " href="/">TOP</a>
-                <a class="text-decoration-none pb-2 me-3 <?php echo $page_class_works; ?> " href="/works">WORKS</a>
-                <a class="text-decoration-none pb-2 me-3 <?php echo $page_class_contact; ?>" href="/contact">CONTACT</a>
-            </nav>
-
-            <!--hide lg-->
-            <div class="button_container lg-hide" id="toggle"><span class="top"></span><span class="middle"></span><span
-                    class="bottom"></span></div>
-            <div class="overlay" id="overlay">
-                <nav class="overlay-menu">
-                    <ul>
-                        <li><a href="/"><img src="<?php echo $url;?>/img/top.svg" alt="tops"></a></a></li>
-                        <li><a href="/works"><img src="<?php echo $url;?>/img/works.svg" alt="works"></a></li>
-                        <li><a href="/contact"><img src="<?php echo $url;?>/img/contact.svg" alt="contact"></a></a></li>
-                    </ul>
-                </nav>
+                <div class="overlay" id="overlay">
+                    <nav class="overlay-menu">
+                        <ul class="gap-5">
+                            <li><a href="/"><img src="<?php echo $url;?>/img/top.svg" alt="tops"></a></li>
+                            <li><a href="/works"><img src="<?php echo $url;?>/img/works.svg" alt="works"></a></li>
+                            <li><a href="/contact"><img src="<?php echo $url;?>/img/contact.svg" alt="contact"></a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-        </div>
-
+        </nav>
     </header>

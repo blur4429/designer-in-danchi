@@ -52,17 +52,6 @@ section {
   margin: 100px auto !important;
 }
 
-main > div > h1 {
-  font-size: 80px;
-  font-weight: normal;
-}
-@media screen and (min-width: 992px) {
-  main > div > h1 {
-    font-size: 120px;
-    padding-top: 40px;
-  }
-}
-
 h4 {
   margin: 2rem 0 !important;
 }
@@ -167,9 +156,8 @@ nav a:hover {
 
 /*nav sp*/
 .button_container {
-  position: fixed;
-  top: 1.2rem;
-  right: 1.2rem;
+  position: absolute;
+  right: 1rem;
   height: 27px;
   width: 32px;
   cursor: pointer;
@@ -257,6 +245,7 @@ nav a:hover {
   flex-direction: column;
   -webkit-justify-content: center;
   justify-content: center;
+  padding: 0 !important;
 }
 .overlay ul li {
   display: block;
@@ -298,10 +287,6 @@ nav a:hover {
     left: 0;
   }
 }
-.border-pink {
-  border-bottom: 1px solid #ff70c4;
-}
-
 /*
 Theme Name: designer-in-danchi
 Author: mazaka
@@ -411,7 +396,7 @@ main.onscroll {
   display: grid;
 }
 .intro .container > div {
-  background: url(./img/danchi.png) no-repeat center bottom;
+  background: url(./img/danchi.jpg) no-repeat center bottom;
   background-size: cover;
   filter: brightness(0.9);
 }
@@ -561,17 +546,17 @@ main.onscroll {
   display: flex;
   position: relative;
 }
-
-.content--full {
-  padding: 0;
-}
-
+.content h3,
 .content p {
   max-width: 660px;
   margin: 0 auto 0.5rem auto;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.5;
+}
+
+.content--full {
+  padding: 0;
 }
 
 .content--highlight p {
@@ -774,6 +759,7 @@ Dart Sass 1.33.0
 /* 
 *pages*
  */
+/*each page*/
 .pagetitle {
   text-align: center;
   padding-top: 80px;
@@ -838,63 +824,6 @@ Dart Sass 1.33.0
   border: none;
   cursor: pointer;
   border-radius: 5px;
-}
-
-/*custom post*/
-#sidebar-nav {
-  position: sticky;
-  top: 100px;
-  background: transparent;
-}
-#sidebar-nav .nav-pills a.nav-link {
-  color: #666 !important;
-}
-#sidebar-nav .nav-pills a.nav-link ul a.nav-link {
-  margin: 0;
-}
-#sidebar-nav .nav-pills .nav-link.active,
-#sidebar-nav .nav-pills .show > .nav-link {
-  background: transparent;
-  color: #ff70c4 !important;
-}
-
-.blog-title {
-  margin-bottom: 60px;
-}
-@media screen and (min-width: 992px) {
-  .blog-title {
-    margin-bottom: 100px;
-  }
-}
-
-.blog-cat {
-  color: #ff70c4;
-}
-.blog-cat a {
-  color: #ff70c4;
-}
-
-.target-div {
-  scroll-margin-top: 100px;
-}
-.target-div div h4 {
-  scroll-margin-top: 100px;
-}
-.target-div div ol li,
-.target-div div ul li {
-  margin-bottom: 0.5rem;
-}
-@media screen and (min-width: 992px) {
-  .target-div div ol,
-  .target-div div ul {
-    padding-left: 2rem !important;
-  }
-}
-@media screen and (min-width: 992px) {
-  .target-div div > div,
-  .target-div div > p {
-    padding-left: 1.5rem !important;
-  }
 }
 
 /*notfound*/
@@ -1295,26 +1224,18 @@ Dart Sass 1.33.0
     display: block !important;
   }
 }
+/*list-style*/
+ul.square > li {
+  list-style-type: square !important;
+}
+
+/*link*/
+a.link,
+span.link {
+  border-bottom: 1px dotted #333333;
+}
+
 /*fonts*/
-.ephesis {
-  font-family: "Ephesis", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.cal-sans {
-  font-family: "Cal Sans", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.poltawski {
-  font-family: "Poltawski Nowy", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: italic;
-}
-
 .poppins {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
@@ -1384,6 +1305,88 @@ Dart Sass 1.33.0
 
 .mb-100 {
   margin-bottom: 100px;
+}
+
+/*
+Theme Name: designer-in-danchi
+Author: mazaka
+Description: original theme
+Version： 1.0.0
+Dart Sass 1.33.0
+*/
+/*
+*blog*
+*/
+/* archive-blog */
+/* category-blog */
+.archive-blog .new,
+.category-blog .new,
+.single-blog .new {
+  color: #ff70c4;
+}
+.archive-blog .blog-cat,
+.category-blog .blog-cat,
+.single-blog .blog-cat {
+  color: #ff70c4;
+}
+.archive-blog .blog-cat a,
+.category-blog .blog-cat a,
+.single-blog .blog-cat a {
+  color: #ff70c4;
+}
+.archive-blog .card,
+.category-blog .card,
+.single-blog .card {
+  background: transparent;
+}
+.archive-blog .card img,
+.category-blog .card img,
+.single-blog .card img {
+  border-radius: 5px;
+}
+
+/* single-blog */
+.single-blog {
+  /* post */
+}
+.single-blog .blog-post-title {
+  margin-bottom: 60px;
+}
+@media screen and (min-width: 992px) {
+  .single-blog .blog-post-title {
+    margin-bottom: 100px;
+  }
+}
+.single-blog .postrow #sidebar-nav {
+  position: sticky;
+  top: 100px;
+  background: transparent;
+}
+.single-blog .postrow #sidebar-nav .nav-pills .show > .nav-link {
+  background: transparent;
+}
+.single-blog .postrow #sidebar-nav .nav-pills .nav-link {
+  color: #333333;
+}
+.single-blog .postrow #sidebar-nav .nav-pills .nav-link.active {
+  color: #ff70c4;
+  background: transparent;
+}
+.single-blog .postrow .postrow-right h3 {
+  border-left: 8px solid #333333;
+  padding: 0.5em;
+}
+.single-blog .postrow .postrow-right p,
+.single-blog .postrow .postrow-right li {
+  line-height: 1.8em;
+  margin-bottom: 1em;
+}
+.single-blog .postrow .postrow-right li {
+  list-style-type: disc;
+}
+.single-blog .postrow .postrow-right img {
+  display: block;
+  margin: 3rem auto;
 }
 
 /*cssのリセット*/

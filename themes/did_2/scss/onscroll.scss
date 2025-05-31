@@ -103,7 +103,7 @@ main.onscroll {
 
     .container {
         >div {
-            background: url(./img/danchi.png) no-repeat center bottom;
+            background: url(./img/danchi.jpg) no-repeat center bottom;
             background-size: cover;
             filter: brightness(.9);
         }
@@ -284,20 +284,19 @@ main.onscroll {
     flex-direction: column;
     display: flex;
     position: relative;
-}
 
+    h3,
+    p {
+        max-width: 660px;
+        margin: 0 auto .5rem auto;
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+}
 
 .content--full {
     padding: 0;
-}
-
-
-.content p {
-    max-width: 660px;
-    margin: 0 auto .5rem auto;
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.5;
 }
 
 .content--highlight p {

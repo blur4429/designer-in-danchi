@@ -46,7 +46,7 @@ function display_page_id($column, $post_id)
 }
 add_action('manage_pages_custom_column', 'display_page_id', 10, 2);
 
-// 自動整形を無効化
+//投稿: 自動整形を無効化
 function my_remove_wpautop()
 {
   remove_filter('the_content', 'wpautop');
@@ -54,15 +54,24 @@ function my_remove_wpautop()
 }
 add_action('init', 'my_remove_wpautop');
 
-//カッコを非表示にする
+//カテゴリー:投稿数のカッコを非表示にし、投稿数を上付き文字にする
 function custom_list_categories_output($output, $args)
 {
-  if (isset($args['show_count']) && $args['show_count']) {
-    $output = preg_replace('/\s*\((\d+)\)/', ' $1', $output);
-  }
-  return $output;
+    if (isset($args['show_count']) && $args['show_count']) {
+        // カッコを削除し、投稿数をspanで囲んで<sup>タグで上付きにする
+        $output = preg_replace('/\s*\((\d+)\)/', '<sup><span>$1</span></sup>', $output);
+    }
+    return $output;
 }
 add_filter('wp_list_categories', 'custom_list_categories_output', 10, 2);
+
+//カテゴリー:aタグにクラス.linkを追加
+function add_link_class_to_category_links($output) {
+    $output = preg_replace('/<a href="(.*?)"/', '<a href="$1" class="link"', $output);
+    return $output;
+}
+add_filter('wp_list_categories', 'add_link_class_to_category_links');
+
 
 // パンくずリスト
 function custom_breadcrumb()
@@ -161,7 +170,7 @@ function disable_visual_editor_custom_post_type($settings, $post) {
 }
 add_filter('wp_editor_settings', 'disable_visual_editor_custom_post_type', 10, 2);
 
-//250513
+//250513　onscroll用jsの読み込み
 
 function add_module_attribute($tag, $handle, $src) {
     $module_scripts = array(
