@@ -577,40 +577,6 @@ main.onscroll {
     font-size: 12vw;
   }
 }
-/*
-.content__title.small {
-    font-size: 6vw !important;
-}
-
-.content__title--left {
-    text-align: left;
-}
-
-.content__title--right {
-    text-align: right;
-}
-
-.content__title--sides {
-    text-align: left;
-    grid-template-rows: auto auto;
-    grid-template-columns: 100%;
-    gap: 2rem;
-    display: grid;
-
-    span:last-child {
-        justify-self: end;
-    }
-}
-
-
-.font-height {
-    line-height: 1.4;
-}
-
-.font-height-medium {
-    line-height: 0.9;
-}
-    */
 .font-medium {
   margin-top: 3rem;
   font-size: 11vw;
@@ -656,11 +622,6 @@ main.onscroll {
   box-shadow: inset 0px 1px 5px #3e43a8;
 }
 
-@media screen and (min-width: 992px) {
-  .fixed-bg {
-    background-size: 100% auto;
-  }
-}
 /*index2.4942c82c.css*/
 .splitting .word,
 .splitting .char {
