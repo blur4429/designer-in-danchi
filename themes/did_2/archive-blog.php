@@ -1,10 +1,11 @@
-<?php get_header();
+<?php 
+get_header();
 $url = get_template_directory_uri();
 ?>
-
-<main>
+<!--blogの投稿一覧ページ-->
+<main class="archive-blog">
     <div class="pagetitle">
-        <h1 class="poppins s-bold me-4 mb-2 mb-md-1">BLOG</h1>
+        <h1 class="poppins s-bold me-4 mb-2 mb-md-1"><img src="<?php echo $url;?>/img/blog.svg" alt="blog"></h1>
     </div>
     <!--breadcrumb-->
     <?php include(get_template_directory() . '/template-parts/breadcrumb.php'); ?>
@@ -31,11 +32,11 @@ $url = get_template_directory_uri();
             <div class="col h-auto d-flex align-items-center ps-3 ps-lg-5">
                 <div>
                     <p class="fw-light mb-3">
-                        <span class="blue3">New</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="new">New</span>&nbsp;&nbsp;&nbsp;&nbsp;
                         <span><?php the_date('Y-n-j'); ?></span>&nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="blog-cat">#<?php the_category(', '); ?></span>
                     </p>
-                    <h2 class=" fs-5 fw-light mb-3"><a href="<?php the_permalink(); ?>">
+                    <h2 class=" fs-4 fw-light mb-3"><a href="<?php the_permalink(); ?>">
                             <?php the_title(); ?></a>
                     </h2>
                 </div>
@@ -56,8 +57,8 @@ $url = get_template_directory_uri();
     <hr>
 
     <!--最新以外の投稿-->
-    <section class="container pt-5">
-        <div class="row" data-masonry="{&quot;percentPosition&quot;: true }">
+    <section class="container overflow-hidden blog-previous pt-5">
+        <div class="row gx-5" data-masonry="{&quot;percentPosition&quot;: true }">
             <?php
       $args_others = [
         'post_type' => 'blog',
@@ -74,13 +75,13 @@ $url = get_template_directory_uri();
           ?>
 
             <div class="col-sm col-md-6 col-lg-4 smaller mb-5">
-                <div class="card px-3">
+                <div class="card">
                     <div class="mb-3"><?php the_post_thumbnail(); ?></div>
                     <ul class="d-flex flex-row smaller fw-light p-0 m-0 mb-2">
                         <li class="pe-3"><?php the_date('Y-n-j'); ?></li>
                         <li class="blog-cat">#<?php the_category(', '); ?></li>
                     </ul>
-                    <h2 class="fs-5 fw-light mb-3"><a href="<?php the_permalink(); ?>">
+                    <h2 class="fs-6 fw-light mb-3"><a href="<?php the_permalink(); ?>">
                             <?php the_title(); ?></a>
                     </h2>
                 </div>
@@ -97,11 +98,8 @@ $url = get_template_directory_uri();
 
     <section class="container">
         <div class="row">
-            <!--category-->
-            <div class="col mx-auto border border-black rounded  p-3 p-md-5 my-5">
-                <?php include(get_template_directory() . '/template-parts/category.php'); ?>
-
-            </div>
+            <!--category-list-->
+            <?php include(get_template_directory() . '/template-parts/category-list.php'); ?>
         </div>
     </section>
 </main>

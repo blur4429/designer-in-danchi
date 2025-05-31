@@ -1,20 +1,21 @@
-<?php get_header();
+<?php 
+$url = get_template_directory_uri();
+get_header();
 ?>
 
-<main>
+<main class="single-blog">
     <div class="pagetitle">
-        <h1 class="poppins s-bold me-4 mb-2 mb-md-1">BLOG</h1>
+        <h1 class="poppins s-bold me-4 mb-2 mb-md-1"><img src="<?php echo $url;?>/img/blog.svg" alt="blog"></h1>
     </div>
     <!--breadcrumb-->
     <?php include(get_template_directory() . '/template-parts/breadcrumb.php'); ?>
 
     <section class="container">
         <div class="row">
-
-            <div class="col">
+            <div class="col ">
 
                 <!--title row2-->
-                <div class="row row-cols-1 row-cols-lg-2 blog-title">
+                <div class="row row-cols-1 row-cols-lg-2 blog-post-title">
                     <!--left-->
                     <div class="col col-lg-6 h-auto d-flex align-items-center">
 
@@ -46,31 +47,29 @@
                 </div>
                 <!--//title row2-->
 
-                <!--post row2-->
-                <div class="row row-cols-1 row-cols-lg-2 mb-5">
+                <!--*** post row2 ***-->
+                <div class="row row-cols-1 row-cols-xl-2 col-xl-10 mx-auto postrow mb-5">
                     <?php
                         the_content();
                         endwhile; ?>
 
-                    <div class="postnav fw-light ps-lg-5">
+                    <!--postnav-->
+                    <div class="postnav fw-light w-100">
                         <!--back and forth-->
                         <div class="d-flex justify-content-between smaller px-lg-4">
                             <div class="nav-previous"><?php previous_post_link('%link', '< %date'); ?></div>
                             <div class="nav-next"><?php next_post_link('%link', '%date >'); ?></div>
                         </div>
-                        <!--category-->
-                        <div class="col border-top border-bottom p-3 p-md-5 my-5">
-                            <?php include(get_template_directory() . '/template-parts/category.php'); ?>
-                        </div>
+                        <!--category-list-->
+                        <?php include(get_template_directory() . '/template-parts/category-list.php'); ?>
                     </div>
 
-                </div>
-                <!--//col-lg-9-->
-            </div>
-            <!--//post row2-->
 
-        </div>
-        <!--//col★-->
+                </div>
+                <!--//*** post row2 ***-->
+
+            </div>
+            <!--//col★-->
         </div>
         <!--//row-->
 

@@ -15,6 +15,9 @@
             case 'CONTACT':
                 $title = $url . '/img/contact.svg';
         break;
+               case 'BLOG':
+                $title = $url . '/img/blog.svg';
+        break;
             case 'THANKS':
                 $title = $url . '/img/thanks.svg';
         break;

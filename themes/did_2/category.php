@@ -1,16 +1,20 @@
-<?php get_header();
+<?php 
+get_header();
+$url = get_template_directory_uri();
 ?>
 
-<main>
+<!--blogのカテゴリーごとの一覧ページ-->
+<main class="category-blog">
     <div class="pagetitle">
-        <h1 class="poppins s-bold me-4 mb-2 mb-md-1">BLOG</h1>
+        <h1 class="poppins s-bold me-4 mb-2 mb-md-1"><img src="<?php echo $url;?>/img/blog.svg" alt="blog"></h1>
     </div>
     <!--breadcrumb-->
     <?php include(get_template_directory() . '/template-parts/breadcrumb.php'); ?>
 
     <section class="container">
         <!--カテゴリ名-->
-        <h1 class="fs-3 fw-light mb-5">CATEGORY:&nbsp;&nbsp;<?php single_term_title(); ?></h1>
+        <h2 class="fs-3 fw-light text-center mb-5"><span
+                class="poppins light">CATEGORY:</span>&nbsp;&nbsp;<?php single_term_title(); ?></h2>
 
         <div class="row" data-masonry="{&quot;percentPosition&quot;: true }">
 
@@ -39,15 +43,15 @@
 
             <div class="col-sm col-md-6 col-lg-4 smaller mb-5" style="position: absolute; left: 0%; top: 0px;">
                 <div class="card p-3">
-                    <div class="mb-3"><?php the_post_thumbnail(); ?></div>
+                    <div class="rounded mb-3"><?php the_post_thumbnail(); ?></div>
 
                     <ul class="d-flex flex-row smaller fw-light p-0 m-0 mb-2">
                         <li class="pe-3"><?php the_date('Y-n-j'); ?></li>
                         <li class="blog-cat">#<?php the_category(', '); ?></li>
                     </ul>
-                    <h2 class="fs-5 fw-light mb-3"><a href="<?php the_permalink(); ?>">
+                    <h3 class="fs-6 fw-light mb-3"><a href="<?php the_permalink(); ?>">
                             <?php the_title(); ?></a>
-                    </h2>
+                    </h3>
                 </div>
             </div>
 
@@ -64,11 +68,8 @@
 
     <section class="container">
         <div class="row">
-            <!--category-->
-            <div class="col mx-auto border border-black rounded p-3 p-md-5 my-5">
-                <?php include(get_template_directory() . '/template-parts/category.php'); ?>
-
-            </div>
+            <!--category-list-->
+            <?php include(get_template_directory() . '/template-parts/category-list.php'); ?>
         </div>
     </section>
 
