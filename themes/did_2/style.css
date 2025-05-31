@@ -499,6 +499,7 @@ main.onscroll {
   padding-bottom: 2rem;
   font-size: 1.1em;
   line-height: 1.2;
+  transition: opacity 0.5s ease-in-out;
 }
 .intro__info > span {
   display: inline-block;
@@ -566,54 +567,50 @@ main.onscroll {
 .content__title {
   counter-increment: section;
   gap: 2rem;
-  font-size: 12vw;
+  font-size: 18vw;
   line-height: 0.8;
   display: grid;
 }
 
+@media screen and (min-width: 1200px) {
+  .content__title {
+    font-size: 12vw;
+  }
+}
+/*
 .content__title.small {
-  font-size: 6vw !important;
+    font-size: 6vw !important;
 }
 
 .content__title--left {
-  text-align: left;
+    text-align: left;
 }
 
 .content__title--right {
-  text-align: right;
+    text-align: right;
 }
 
-@media screen and (max-width: 1200px) {
-  .content__title {
-    /*skills*/
-    /*job*/
-  }
-  .content__title[data-effect27] .font-upper {
-    font-size: 0.8em;
-  }
-  .content__title[data-effect29] .cal-sans {
-    font-size: 1.2em;
-  }
-}
 .content__title--sides {
-  text-align: left;
-  grid-template-rows: auto auto;
-  grid-template-columns: 100%;
-  gap: 2rem;
-  display: grid;
+    text-align: left;
+    grid-template-rows: auto auto;
+    grid-template-columns: 100%;
+    gap: 2rem;
+    display: grid;
+
+    span:last-child {
+        justify-self: end;
+    }
 }
-.content__title--sides span:last-child {
-  justify-self: end;
-}
+
 
 .font-height {
-  line-height: 1.4;
+    line-height: 1.4;
 }
 
 .font-height-medium {
-  line-height: 0.9;
+    line-height: 0.9;
 }
-
+    */
 .font-medium {
   margin-top: 3rem;
   font-size: 11vw;
@@ -656,6 +653,7 @@ main.onscroll {
   background: url(./img/night.jpg) no-repeat center bottom;
   background-size: auto 100%;
   background-attachment: fixed;
+  box-shadow: inset 0px 1px 5px #3e43a8;
 }
 
 @media screen and (min-width: 992px) {
@@ -1324,6 +1322,11 @@ Dart Sass 1.33.0
 .single-blog .new {
   color: #ff70c4;
 }
+.archive-blog .thumb img,
+.category-blog .thumb img,
+.single-blog .thumb img {
+  border-radius: 5px;
+}
 .archive-blog .blog-cat,
 .category-blog .blog-cat,
 .single-blog .blog-cat {
@@ -1371,6 +1374,12 @@ Dart Sass 1.33.0
 .single-blog .postrow #sidebar-nav .nav-pills .nav-link.active {
   color: #ff70c4;
   background: transparent;
+}
+.single-blog .postrow .postrow-right .target-div {
+  scroll-margin-top: 50px;
+}
+.single-blog .postrow .postrow-right .target-div div h4 {
+  scroll-margin-top: 50px;
 }
 .single-blog .postrow .postrow-right h3 {
   border-left: 8px solid #333333;

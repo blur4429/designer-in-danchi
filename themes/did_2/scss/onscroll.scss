@@ -230,6 +230,7 @@ main.onscroll {
     padding-bottom: 2rem;
     font-size: 1.1em;
     line-height: 1.2;
+    transition: opacity 0.5s ease-in-out;
 
     >span {
         display: inline-block;
@@ -306,11 +307,21 @@ main.onscroll {
 .content__title {
     counter-increment: section;
     gap: 2rem;
-    font-size: 12vw;
+    font-size: 18vw;
     line-height: .8;
     display: grid;
 }
 
+@include v.mq(xl) {
+
+    .content__title {
+        font-size: 12vw;
+    }
+
+}
+
+
+/*
 .content__title.small {
     font-size: 6vw !important;
 }
@@ -321,22 +332,6 @@ main.onscroll {
 
 .content__title--right {
     text-align: right;
-}
-
-
-@include v.mq(down-xl) {
-    .content__title {
-
-        /*skills*/
-        &[data-effect27] .font-upper {
-            font-size: .8em;
-        }
-
-        /*job*/
-        &[data-effect29] .cal-sans {
-            font-size: 1.2em;
-        }
-    }
 }
 
 .content__title--sides {
@@ -359,6 +354,7 @@ main.onscroll {
 .font-height-medium {
     line-height: 0.9;
 }
+    */
 
 .font-medium {
     margin-top: 3rem;
@@ -405,6 +401,7 @@ main.onscroll {
     background: url(./img/night.jpg) no-repeat center bottom;
     background-size: auto 100%;
     background-attachment: fixed;
+    box-shadow: inset 0px 1px 5px v.$blue;
 
 }
 
