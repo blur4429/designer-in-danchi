@@ -280,7 +280,6 @@ main.onscroll {
 }
 
 .fixed-bg {
-    min-height: var(--viewport-height);
     min-height: 50vh;
     background: url(./img/night.jpg) no-repeat center bottom;
     background-size: cover;
@@ -289,4 +288,13 @@ main.onscroll {
     touch-action: manipulation;
     /*ピンチズーム無効化*/
 
+}
+
+@supports (-webkit-touch-callout: none) {
+
+    /* iOS Safari 対策 */
+    .fixed-bg {
+        min-height: calc(var(--vh, 1vh) * 50);
+        /* CSS変数を使用 */
+    }
 }
