@@ -539,8 +539,17 @@ main.onscroll {
   background-size: cover;
   background-attachment: fixed;
   box-shadow: inset 0px 1px 5px #3e43a8;
+  touch-action: manipulation;
+  /*ピンチズーム無効化*/
 }
 
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari 対策 */
+  .fixed-bg {
+    min-height: calc(var(--vh, 1vh) * 50);
+    /* CSS変数を使用 */
+  }
+}
 /*index2.4942c82c.css*/
 .splitting .word,
 .splitting .char {

@@ -217,11 +217,9 @@ var splide = new Splide('.splide', {
 splide.mount()
 
 //background-attachment対策
-//CSSでviewportの高さを表すカスタムプロパティを定義
-//javaScriptで初期ロード時とリサイズ時にviewportの高さを計算し、CSS変数にセット
 function setViewportHeight () {
   let vh = window.innerHeight * 0.01
-  document.documentElement.style.setProperty('--viewport-height', `${vh}px`)
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
 }
 
 setViewportHeight()
