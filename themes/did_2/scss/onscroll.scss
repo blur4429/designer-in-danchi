@@ -280,21 +280,19 @@ main.onscroll {
 }
 
 .fixed-bg {
+    position: relative;
     min-height: 50vh;
-    background: url(./img/night.jpg) no-repeat center bottom;
-    background-size: cover;
-    background-attachment: fixed;
-    box-shadow: inset 0px 1px 5px v.$blue;
-    touch-action: manipulation;
-    /*ピンチズーム無効化*/
+    clip-path: inset(0 0 0 0);
 
-}
-
-@supports (-webkit-touch-callout: none) {
-
-    /* iOS Safari 対策 */
-    .fixed-bg {
-        min-height: calc(var(--vh, 1vh) * 50);
-        /* CSS変数を使用 */
+    >div {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover !important;
+        background: url(./img/night.jpg) no-repeat center bottom;
     }
 }
