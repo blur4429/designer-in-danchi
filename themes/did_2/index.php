@@ -32,7 +32,7 @@
                     <img src="<?php echo $url;?>/img/about.svg" alt="about"></span>
             </h2>
 
-            <div class="col-8 col-md-6 col-lg-4 mx-auto slidein slidein-bottom mb-5 scrollin">
+            <div class="col-8 col-md-6 col-lg-3 mx-auto slidein slidein-bottom mb-5 scrollin">
                 <img class="rounded-circle" src="<?php echo $url;?>/img/self.jpg" alt="self">
             </div>
 

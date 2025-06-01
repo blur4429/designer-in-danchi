@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 100)
 })
 
-// Fade logomark and title ＋ intro__info ..on scroll
+// Fade logomark and title
+// ..On scroll
 const fadeTitle = document.querySelector('.fade-title')
 const logomark = document.querySelector('.logomark')
 const introInfo = document.querySelector('.intro__info')
@@ -42,18 +43,21 @@ const newLogomarkSrc = '/wp-content/themes/did_2/icons/logomark2.svg'
 const scrollThreshold = 100
 let isLogomarkChanged = false
 
-if (fadeTitle && logomark && introInfo) {
-  // 新しい要素も条件に追加
-  window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY
 
-    // fade-title の制御
+  // fade-title の制御
+  if (fadeTitle) {
     fadeTitle.style.opacity = scrollPosition > scrollThreshold ? 0 : 1
+  }
 
-    // intro__info の制御 (fade-title と同じ動き)
+  // intro__info の制御 (トップページのみ存在)
+  if (introInfo) {
     introInfo.style.opacity = scrollPosition > scrollThreshold ? 0 : 1
+  }
 
-    // logomark の制御
+  // logomark の制御
+  if (logomark) {
     if (scrollPosition > scrollThreshold && !isLogomarkChanged) {
       logomark.setAttribute('src', newLogomarkSrc)
       logomark.style.opacity = 1
@@ -67,8 +71,8 @@ if (fadeTitle && logomark && introInfo) {
     } else {
       logomark.style.opacity = 1
     }
-  })
-}
+  }
+})
 
 //prism.js クリップボードAPIを使用して、コードをコピーする
 document.addEventListener('DOMContentLoaded', () => {
@@ -160,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 })
 
-//page top button
+//button　to page top
 document.addEventListener('scroll', function () {
   const pageTopButton = document.getElementById('page-top')
   if (pageTopButton) {
