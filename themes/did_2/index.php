@@ -66,7 +66,9 @@
     </section>
 
     <!--fixed-bg-->
-    <div class="container-fluid fixed-bg my-100"></div>
+    <div class="container-fluid fixed-bg my-100">
+        <div></div>
+    </div>
 
     <!--4　　data-effect27-->
     <section>
