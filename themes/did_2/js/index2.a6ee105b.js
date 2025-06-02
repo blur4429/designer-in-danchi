@@ -34,6 +34,7 @@ null == i &&
     n[t] = e
   }),
   (e.parcelRequire2524 = i))
+
 var o = i.register
 o('5IQP4', function (e, r) {
   t(e.exports, 'preloadFonts', function () {
