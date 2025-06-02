@@ -53,3 +53,5 @@ w3tc-config/
 # macOS Finder
 .DS_Store
 scss/
+*.min.css
+*.css.map
