@@ -32,7 +32,7 @@
                     <img src="<?php echo $url;?>/img/about.svg" alt="about"></span>
             </h2>
 
-            <div class="col-8 col-md-6 col-lg-3 mx-auto slidein slidein-bottom mb-5 scrollin">
+            <div class="col-8 col-md-6 col-lg-3 mx-auto slidein slidein-bottom mb-5">
                 <img class="rounded-circle" src="<?php echo $url;?>/img/self.jpg" alt="self">
             </div>
 
@@ -80,8 +80,8 @@
         <div class="container mb-5">
             <h3 class="content__title text-center mb-5" data-splitting data-effect27>
                 <span class="poppins s-bold font-medium">
-                    AdobeCC Canva Webflow Figma AWS Github Git Docker Wordpress
-                    scss HTML php javascript jQuery Marketo
+                    AdobeCC Canva Figma Webflow Git Github Wordpress AWS Docker
+                    SCSS HTML php javascript jQuery MSOffice365 Marketo
                 </span>
             </h3>
             <!--btn2-->
