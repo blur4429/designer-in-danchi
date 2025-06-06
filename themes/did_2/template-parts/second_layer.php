@@ -29,7 +29,7 @@
 
         <h1 class="text-center"><img src="<?php echo $title;?>" alt="<?php echo $page_title ?>">
         </h1>
-        <ul class="row row-cols-2 row-cols-md-4 justify-content-center fw-bold m-0 p-0">
+        <ul class="row row-cols-2 row-cols-md-4 justify-content-center poppins s-bold m-0 p-0">
             <?php echo $list;?>
         </ul>
     </div>

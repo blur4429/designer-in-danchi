@@ -11,9 +11,9 @@ switch ($page_title) {
     
     case 'WORKS':
         $list = ' <li class="col p-2 p-md-0"><a class="me-1" href="#web">WEB</a></li>
-<li class="col p-2 p-md-0"> <a class="me-1" href="#lp">LANDING PAGE</a></li>
-<li class="col p-2 p-md-0"> <a class="me-1" href="#banners">BANNERS</a></li>
-<li class="col p-2 p-md-0"><a class="me-1" href="#other">OTHER</a></li>';
+                    <li class="col p-2 p-md-0"> <a class="me-1" href="#lp">LANDING PAGE</a></li>
+                    <li class="col p-2 p-md-0"> <a class="me-1" href="#banners">BANNERS</a></li>
+                    <li class="col p-2 p-md-0"><a class="me-1" href="#other">OTHER</a></li>';
 include(locate_template('template-parts/second_layer.php'));
 break;
 case 'CONTACT' || 'THANKS':

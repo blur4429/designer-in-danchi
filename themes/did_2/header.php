@@ -99,7 +99,7 @@ switch ($page_id) {
                 </div>
                 <div class="overlay" id="overlay">
                     <nav class="overlay-menu">
-                        <ul class="gap-5">
+                        <ul class="col-xl-6 mx-auto gap-5">
                             <li><a href="/"><img src="<?php echo $url;?>/img/top.svg" alt="tops"></a></li>
                             <li><a href="/works"><img src="<?php echo $url;?>/img/works.svg" alt="works"></a></li>
                             <li><a href="/contact"><img src="<?php echo $url;?>/img/contact.svg" alt="contact"></a></li>
