@@ -9,7 +9,7 @@
       ); ?></p>
 
     <p id="page-top">
-        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/icons/arrow-up-circle.svg" alt="up"></a>
+        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/icons/arrow-up-short.svg" alt="up"></a>
     </p>
 </footer>
 
