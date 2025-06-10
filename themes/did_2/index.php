@@ -7,7 +7,7 @@
         <div class="container h-75 p-xl-5">
             <!--bg-->
             <div class="intro__title-pre h-100 rounded-3"></div>
-            <p class="intro__title-sub text-xxl-end poppins reg">&nbsp;Portfolio 2025</p>
+            <p class="intro__title-sub text-xxl-end poppins reg">Portfolio 2025</p>
         </div>
         <div class="title flex-column h-100"></div>
 
@@ -41,16 +41,17 @@
                 <h3 class="font-small mb-2">
                     神奈川県出身、東京のとある団地に住むデザイナーです。</h3>
 
-                <p class="font-small mb-2">
+                <p class="font-small t-justify mb-2">
                     長らく事務系派遣に従事するもリーマンショックを機に一念発起しWebデザイナーに転身、
                     2024年にお世話になった企業からフリーのWebデザイナーとして巣立ちました。
                     シンプルなデザインが好きですが、仕事以外に暮らしぶりにもそれを反映させています。新しいものを買う前にありモノを工夫して使う、作れるものは自分で作るなど、最小のリソースでいかに心地よくすてきに暮らすかを考え、実践することを楽しんでいます。
                 </p>
 
-                <p class="font-small">この暮らしの舞台として団地はぴったりです。最初は古くて狭くてイケてないという印象でしたが、全戸日当り抜群、手入れされた外壁や樹木などすてきなところもあるのです。
+                <p class="font-small t-justify">
+                    この暮らしの舞台として団地はぴったりです。最初は古くて狭くてイケてないという印象でしたが、全戸日当り抜群、手入れされた外壁や樹木などすてきなところもあるのです。
                 </p>
 
-                <p class="font-small">
+                <p class="font-small t-justify">
                     野鳥たちのかわいらしい鳴声、公園で遊ぶ子供達の笑い声、お年寄りの井戸端会議など、癒しもたくさんあります。
                     このような環境の中で日々制作を行っています。
                 </p>

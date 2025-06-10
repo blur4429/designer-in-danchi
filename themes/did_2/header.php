@@ -6,9 +6,8 @@
     <title>団地のDesigner | ポートフォリオ | Webデザイナー | 東京都</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="団地のデザイナーのポートフォリオサイトです。Webデザイン、UI/UXデザインを中心に、これまでの実績やスキルを紹介しています。お仕事のご依頼・ご相談はお気軽にお問い合わせください。">
-    <meta name="keywords" content="Webデザイナー, UI/UXデザイナー, ポートフォリオ, 団地のデザイナー, 東京都">
+    <meta name="description" content="団地ノスタルジア meets Webデザイン。団地から発信するWebデザインの実験室。">
+    <meta name="keywords" content="団地から発信, Webデザイナー, ポートフォリオ, 団地のデザイナー, 東京都">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
