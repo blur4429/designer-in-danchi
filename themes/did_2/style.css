@@ -145,16 +145,7 @@ header {
   font-size: 0.5em;
 }
 
-/*nav pc*/
-nav a:hover {
-  color: #ff70c4;
-}
-
-.active-page {
-  border-bottom: 1px solid #333333;
-}
-
-/*nav sp*/
+/*nav*/
 .button_container {
   position: absolute;
   right: 1rem;
@@ -314,10 +305,20 @@ main.onscroll {
   height: 100vh;
   display: grid;
 }
-.intro .container > div {
-  background: url(./img/danchi.jpg) no-repeat center bottom;
+.intro .container {
+  /*bg*/
+}
+.intro .container .intro__title-pre {
+  background: url(./img/danchi.jpg) no-repeat center center;
   background-size: cover;
   filter: brightness(0.9);
+  opacity: 0.9;
+  /*sp 　横*/
+}
+@media (orientation: landscape) and (max-height: 767px) {
+  .intro .container .intro__title-pre {
+    opacity: 0.8;
+  }
 }
 .intro .container p {
   color: #ff70c4;
@@ -334,11 +335,53 @@ main.onscroll {
   margin: 0 auto;
   left: 0;
   right: 0;
-  top: 1rem;
-  background-size: 100% auto;
-  background-position: center top;
   animation: slideIn 0.5s forwards 0.3s;
   opacity: 0;
+  /*sp 縦*/
+  /*sp 　横*/
+  /*tablet　縦*/
+  /*tablet　横*/
+  /*pc*/
+}
+@media (max-width: 767px) and (orientation: portrait) {
+  .intro .title {
+    background: url(./img/title_sp.svg) no-repeat;
+    top: 2rem;
+    background-size: 85% auto;
+    background-position: center top;
+  }
+}
+@media (orientation: landscape) and (max-height: 767px) {
+  .intro .title {
+    background: url(./img/title_pc.svg) no-repeat;
+    top: 1rem;
+    background-size: 90% auto;
+    background-position: center top;
+  }
+}
+@media (min-width: 768px) and (max-width: 1365px) and (orientation: portrait) {
+  .intro .title {
+    background: url(./img/title_sp.svg) no-repeat;
+    top: 1rem;
+    background-size: 90% auto;
+    background-position: center top;
+  }
+}
+@media (orientation: landscape) and (min-width: 768px) {
+  .intro .title {
+    background: url(./img/title_pc.svg) no-repeat;
+    top: 1rem;
+    background-size: 90% auto;
+    background-position: center top;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .intro .title {
+    background: url(./img/title_pc.svg) no-repeat;
+    top: -1rem;
+    background-size: 90% auto;
+    background-position: center top;
+  }
 }
 
 @keyframes slideIn {
@@ -351,54 +394,19 @@ main.onscroll {
     transform: translateY(0);
   }
 }
-/*sp 縦*/
-@media (max-width: 767px) and (orientation: portrait) {
-  .title {
-    background: url(./img/title_sp.svg) no-repeat;
-  }
-}
-/*sp 　横*/
-@media (orientation: landscape) and (max-height: 767px) {
-  .title {
-    background: url(./img/title_pc.svg) no-repeat;
-  }
-}
-/*tablet　縦*/
-@media (min-width: 768px) and (max-width: 1365px) and (orientation: portrait) {
-  .title {
-    background: url(./img/title_sp.svg) no-repeat;
-  }
-}
-/*tablet　横*/
-@media (orientation: landscape) and (min-width: 768px) {
-  .title {
-    background: url(./img/title_pc.svg) no-repeat;
-  }
-}
-/*pc*/
-@media (min-width: 1366px) and (orientation: portrait) {
-  .title {
-    background: url(./img/title_pc.svg) no-repeat;
-  }
-}
-@media screen and (min-width: 1400px) {
-  .title {
-    background: url(./img/title_pc.svg) no-repeat;
-  }
-}
 .intro__title-sub {
   font-size: clamp(1.5rem, 2vw, 2.75rem);
   animation-name: slidein-x;
   animation-duration: 2s;
   animation-iteration-count: 1;
+  /*sp 　横むき高さ344*/
 }
-
-/*sp 　横むき高さ344*/
-@media (orientation: landscape) and (max-height: 375px) {
+@media (orientation: landscape) and (max-height: 430px) {
   .intro__title-sub {
     text-align: right;
   }
 }
+
 @keyframes slidein-x {
   from {
     opacity: 0;
@@ -435,12 +443,12 @@ main.onscroll {
   left: 45%;
   animation: scrollDown 2s ease infinite;
 }
-
 @media screen and (min-width: 992px) {
   .intro__info {
     right: 2rem;
   }
 }
+
 @keyframes scrollDown {
   0% {
     transform-origin: top;
@@ -490,22 +498,22 @@ main.onscroll {
   line-height: 0.8;
   display: grid;
 }
-
 @media screen and (min-width: 1200px) {
   .content__title {
     font-size: 12vw;
   }
 }
+
 .font-medium {
   margin-top: 3rem;
   font-size: 11vw;
 }
-
 @media screen and (min-width: 992px) {
   .font-medium {
     font-size: 6vw;
   }
 }
+
 .font-sub {
   margin-top: 2rem;
   font-size: 5vw;
@@ -523,16 +531,18 @@ main.onscroll {
   overflow: hidden;
 }
 
-@media screen and (width >= 53em) {
-  .frame {
-    grid-gap: 2rem;
-    grid-template: "title prev demos sponsor"/auto auto 1fr auto;
-    justify-items: start;
-  }
-  .frame__demos {
-    justify-self: end;
-  }
-}
+/*
+@media screen and (width >=53em) {
+    .frame {
+        grid-gap: 2rem;
+        grid-template: "title prev demos sponsor" /auto auto 1fr auto;
+        justify-items: start;
+    }
+
+    .frame__demos {
+        justify-self: end;
+    }
+}*/
 .fixed-bg {
   position: relative;
   min-height: 50vh;
@@ -551,17 +561,19 @@ main.onscroll {
 }
 
 /*index2.4942c82c.css*/
-.splitting .word,
-.splitting .char {
+.splitting {
+  --word-center:calc((var(--word-total) - 1)/2);
+  --char-center:calc((var(--char-total) - 1)/2);
+  --line-center:calc((var(--line-total) - 1)/2);
+}
+.splitting .word {
   display: inline-block;
 }
-
 .splitting .char {
+  display: inline-block;
   position: relative;
 }
-
-.splitting .char:before,
-.splitting .char:after {
+.splitting .char:before, .splitting .char:after {
   content: attr(data-char);
   visibility: hidden;
   -webkit-user-select: none;
@@ -571,26 +583,17 @@ main.onscroll {
   top: 0;
   left: 0;
 }
-
-.splitting {
-  --word-center: calc((var(--word-total) - 1)/2);
-  --char-center: calc((var(--char-total) - 1)/2);
-  --line-center: calc((var(--line-total) - 1)/2) ;
-}
-
 .splitting .word {
   --word-percent: calc(var(--word-index)/var(--word-total));
-  --line-percent: calc(var(--line-index)/var(--line-total)) ;
+  --line-percent: calc(var(--line-index)/var(--line-total));
 }
-
 .splitting .char {
   --char-percent: calc(var(--char-index)/var(--char-total));
   --char-offset: calc(var(--char-index) - var(--char-center));
   --distance: calc((var(--char-offset)*var(--char-offset))/var(--char-center));
   --distance-sine: calc(var(--char-offset)/var(--char-center));
-  --distance-percent: calc((var(--distance)/var(--char-center))) ;
+  --distance-percent: calc((var(--distance)/var(--char-center)));
 }
-
 .splitting.cells img {
   width: 100%;
   display: block;
@@ -633,7 +636,7 @@ main.onscroll {
     --offset-x: calc(var(--col-index) - var(--center-x));
     --offset-y: calc(var(--row-index) - var(--center-y));
     --distance-x: calc((var(--offset-x)*var(--offset-x))/var(--center-x));
-    --distance-y: calc((var(--offset-y)*var(--offset-y))/var(--center-y)) ;
+    --distance-y: calc((var(--offset-y)*var(--offset-y))/var(--center-y));
   }
 }
 /*
@@ -991,14 +994,6 @@ Dart Sass 1.33.0
   right: 25px;
 }
 
-.btn-ob::before {
-  background-image: url(icons/box-arrow-up-right.svg);
-}
-
-.btn-modal::before {
-  background-image: url(icons/window-plus.svg);
-}
-
 /*to内部ボタン*/
 .btn-l {
   position: relative;
@@ -1056,9 +1051,6 @@ Dart Sass 1.33.0
 /*
 *form*
 */
-form {
-  /*button > btn.scss*/
-}
 form label span {
   color: #ff70c4;
 }
@@ -1170,6 +1162,11 @@ span.link {
 }
 .poppins.s-bold {
   font-weight: 600;
+}
+
+/* paragraph */
+.t-justify {
+  text-align: justify;
 }
 
 /*font-size*/
